@@ -22,3 +22,16 @@ input {
 .item-icon-left.indent .icon {
 	left: 31px;
 }
+
+.home-search {
+	background: #0099ff;
+	color: #fff;
+}
+
+body {
+	background: #eee;
+}
+
+.pane, .view {
+	background: #eee;
+}

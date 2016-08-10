@@ -76,8 +76,13 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams, $location) {
+.controller('PlaylistCtrl', function($scope, $stateParams, $location, $http) {
 	$scope.category = function() {
 		return $location.hash()
 	}
+
+  $http.get('products.json').success(function(data) {
+      $scope.products = data.products;
+  });
+
 });

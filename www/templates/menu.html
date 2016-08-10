@@ -8,6 +8,10 @@
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-cart" menu-toggle="right">
+        </button>
+      </ion-nav-buttons>
 
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
@@ -27,8 +31,12 @@
 </div>
 
     </ion-header-bar>
-    <ion-content ng-controller="MenuCtrl">
+    <ion-content ng-controller="MenuCtrl" style="background: #eee;">
       <ion-list>
+        <ion-item menu-close class="item-icon-left" href="#/">
+          <i class="icon ion-ios-home"></i>
+          Home
+        </ion-item>
         <ion-item class="item-icon-left" ng-click="toggle()">
           <i class="icon ion-chevron-right" ng-hide="showCategories"></i><i class="icon ion-chevron-down" ng-show="showCategories"></i>
           Product Categories
@@ -43,10 +51,6 @@
             {{category2.name}}
           </ion-item>
         </div>
-        <ion-item menu-close class="item-icon-left" href="#/app/" ng-click="login()">
-        <i class="icon ion-locked"></i>
-          Login
-        </ion-item>
         <ion-item menu-close class="item-icon-left" href="#/app/browse">
           <i class="icon ion-ios-telephone"></i>
           Contact
@@ -56,8 +60,8 @@
   </ion-side-menu>
 
     <ion-side-menu side="right">
-    <ion-header-bar class="bar-positive">
-
+    <ion-header-bar class="bar-dark" title="Cart">
+<h1 class="title">Shopping Trolley</h1>
     </ion-header-bar>
     <ion-content ng-controller="MenuCtrl">
       <ion-list>

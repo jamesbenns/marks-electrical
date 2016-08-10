@@ -1,0 +1,7 @@
+{"products":[
+    {"name": "Samsung Series 9", "images":["./img/tv1.jpg", "./img/tv2.jpg", "./img/tv3.jpg"], "id":1, "price": 16998.99, "stock": 10, "rating": 5},
+    {"name": "LG 4k Ultra HD", "images":["./img/lg1.jpg", "./img/lg2.jpg"], "id":2, "price": 7998.99, "stock": 0, "rating": 3},
+    {"name": "Cello White with Built in DVD Player", "images":["./img/cello1.jpg"], "id":3, "price": 151.99, "stock": 28, "rating": 4},
+    {"name": "Samsung Full HD LED", "images":["./img/sa1.jpg", "./img/sa2.jpg"], "id":4, "price": 169.99, "stock": 10, "rating": 2},
+    {"name": "Hisense M2600 Full HD", "images":["./img/hi1.jpg", "./img/hi2.jpg", "./img/hi3.jpg"], "id":5, "price": 249, "stock": 13, "rating": 4}
+]}
