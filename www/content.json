@@ -1,0 +1,45 @@
+{"categories":[
+    {"name":"TV & Entertainment", "id":1, "categories":[
+    	{"name":"Televisions", "id": 1},
+    	{"name":"Home Cinema", "id": 2},
+    	{"name":"Audio", "id": 3},
+    	{"name":"AV Furniture", "id": 4}
+    ]},
+    {"name":"Laundry", "id":2, "categories":[
+    	{"name":"Televisions", "id": 1},
+    	{"name":"Home Cinema", "id": 2},
+    	{"name":"Audio", "id": 3},
+    	{"name":"AV Furniture", "id": 4}
+    ]},
+    {"name":"Cooking", "id":3, "categories":[
+    	{"name":"Televisions", "id": 1},
+    	{"name":"Home Cinema", "id": 2},
+    	{"name":"Audio", "id": 3},
+    	{"name":"AV Furniture", "id": 4}
+    ]},
+    {"name":"Dishwashers", "id":4, "categories":[
+    	{"name":"Televisions", "id": 1},
+    	{"name":"Home Cinema", "id": 2},
+    	{"name":"Audio", "id": 3},
+    	{"name":"AV Furniture", "id": 4}
+    ]},
+    {"name":"Refrigeration", "id":5, "categories":[
+    	{"name":"Televisions", "id": 1},
+    	{"name":"Home Cinema", "id": 2},
+    	{"name":"Audio", "id": 3},
+    	{"name":"AV Furniture", "id": 4}
+    ]},
+    {"name":"Small Appliances", "id":6, "categories":[
+    	{"name":"Televisions", "id": 1},
+    	{"name":"Home Cinema", "id": 2},
+    	{"name":"Audio", "id": 3},
+    	{"name":"AV Furniture", "id": 4}
+    ]},
+    {"name":"Brands", "id":7, "categories":[
+    	{"name":"Televisions", "id": 1},
+    	{"name":"Home Cinema", "id": 2},
+    	{"name":"Audio", "id": 3},
+    	{"name":"AV Furniture", "id": 4}
+    ]},
+    {"name":"Clearance", "id":8}
+]}

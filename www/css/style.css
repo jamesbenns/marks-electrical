@@ -1,0 +1,24 @@
+.title-image {
+	height: 30px;
+	margin-top: 6px;
+}
+
+input {
+	background-color: transparent;
+}
+
+.button-clear.button-clear {
+	color: inherit;
+}
+
+.icon-small {
+	font-size: 20px !important;
+}
+
+.item-complex.item-icon-left.indent .item-content {
+	padding-left: 74px;
+}
+
+.item-icon-left.indent .icon {
+	left: 31px;
+}
