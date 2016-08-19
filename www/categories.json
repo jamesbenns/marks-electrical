@@ -1,0 +1,1866 @@
+{
+   "categories":[
+      {
+         "id":"60",
+         "code":"AV",
+         "url":"audio-visual",
+         "name":"Audio Visual",
+         "numberOfItems":382,
+         "children":{
+            "89":{
+               "id":"89",
+               "code":"AVTV",
+               "url":"televisions",
+               "name":"Televisions",
+               "numberOfItems":"142",
+               "children":null
+            },
+            "61":{
+               "id":"61",
+               "code":"AVAS",
+               "url":"av-accessories",
+               "name":"AV Accessories",
+               "numberOfItems":"5",
+               "children":null
+            },
+            "80":{
+               "id":"80",
+               "code":"AVHT",
+               "url":"home-cinema",
+               "name":"Home Cinema",
+               "numberOfItems":57,
+               "children":{
+                  "81":{
+                     "id":"81",
+                     "code":"AVHTHC",
+                     "url":"home-cinema-systems",
+                     "name":"Home Cinema Systems",
+                     "numberOfItems":"2",
+                     "children":null
+                  },
+                  "85":{
+                     "id":"85",
+                     "code":"AVHTSB",
+                     "url":"sound-bars",
+                     "name":"Sound Bars",
+                     "numberOfItems":"38",
+                     "children":null
+                  },
+                  "395":{
+                     "id":"395",
+                     "code":"AVHTBA",
+                     "url":"sound-bases",
+                     "name":"Sound Bases",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "396":{
+                     "id":"396",
+                     "code":"AVHTSW",
+                     "url":"subwoofers",
+                     "name":"Subwoofers",
+                     "numberOfItems":"1",
+                     "children":null
+                  },
+                  "407":{
+                     "id":"407",
+                     "code":"AVHTBP",
+                     "url":"blu-ray-players",
+                     "name":"Blu-ray Players",
+                     "numberOfItems":"11",
+                     "children":null
+                  },
+                  "415":{
+                     "id":"415",
+                     "code":"AVHTDP",
+                     "url":"dvd-players",
+                     "name":"DVD Players",
+                     "numberOfItems":"2",
+                     "children":null
+                  }
+               }
+            },
+            "403":{
+               "id":"403",
+               "code":"AVAU",
+               "url":"audio",
+               "name":"Audio",
+               "numberOfItems":34,
+               "children":{
+                  "405":{
+                     "id":"405",
+                     "code":"AVAUWS",
+                     "url":"wireless-speakers",
+                     "name":"Wireless Speakers",
+                     "numberOfItems":"27",
+                     "children":null
+                  },
+                  "406":{
+                     "id":"406",
+                     "code":"AVAUHF",
+                     "url":"hi-fi-systems",
+                     "name":"Hi-Fi Systems",
+                     "numberOfItems":"7",
+                     "children":null
+                  }
+               }
+            },
+            "408":{
+               "id":"408",
+               "code":"AVFU",
+               "url":"av-furniture",
+               "name":"AV Furniture",
+               "numberOfItems":144,
+               "children":{
+                  "409":{
+                     "id":"409",
+                     "code":"AVFUWB",
+                     "url":"tv-wall-brackets",
+                     "name":"TV Wall Brackets",
+                     "numberOfItems":"19",
+                     "children":null
+                  },
+                  "410":{
+                     "id":"410",
+                     "code":"AVFUCA",
+                     "url":"tv-cabinets",
+                     "name":"TV Cabinets",
+                     "numberOfItems":"60",
+                     "children":null
+                  },
+                  "411":{
+                     "id":"411",
+                     "code":"AVFUST",
+                     "url":"tv-stands",
+                     "name":"TV Stands",
+                     "numberOfItems":"48",
+                     "children":null
+                  },
+                  "412":{
+                     "id":"412",
+                     "code":"AVFUSS",
+                     "url":"speaker-stands",
+                     "name":"Speaker Stands",
+                     "numberOfItems":"8",
+                     "children":null
+                  },
+                  "413":{
+                     "id":"413",
+                     "code":"AVFUSB",
+                     "url":"speaker-brackets",
+                     "name":"Speaker Brackets",
+                     "numberOfItems":"9",
+                     "children":null
+                  }
+               }
+            }
+         }
+      },
+      {
+         "id":"170",
+         "code":"DW",
+         "url":"dishwashers",
+         "name":"Dishwashers",
+         "numberOfItems":240,
+         "children":{
+            "182":{
+               "id":"182",
+               "code":"DWFS",
+               "url":"freestanding-dishwashers",
+               "name":"Freestanding Dishwashers",
+               "numberOfItems":100,
+               "children":{
+                  "179":{
+                     "id":"179",
+                     "code":"DWCM",
+                     "url":"compact-dishwashers",
+                     "name":"Compact Dishwashers",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "181":{
+                     "id":"181",
+                     "code":"DWDW",
+                     "url":"dishwasher",
+                     "name":"Dishwashers",
+                     "numberOfItems":"84",
+                     "children":null
+                  },
+                  "183":{
+                     "id":"183",
+                     "code":"DWSL",
+                     "url":"slimline-dishwashers",
+                     "name":"Slimline Dishwashers",
+                     "numberOfItems":"13",
+                     "children":null
+                  }
+               }
+            },
+            "171":{
+               "id":"171",
+               "code":"DWBI",
+               "url":"integrated-dishwashers",
+               "name":"Integrated Dishwashers",
+               "numberOfItems":140,
+               "children":{
+                  "175":{
+                     "id":"175",
+                     "code":"DWBIFISL",
+                     "url":"built-in-fully-int-slimline-dishwashers",
+                     "name":"Built In Fully Int. Slimline Dishwashers",
+                     "numberOfItems":"20",
+                     "children":null
+                  },
+                  "174":{
+                     "id":"174",
+                     "code":"DWBIFI",
+                     "url":"built-in-fully-integrated-dishwashers",
+                     "name":"Built In Fully Integrated Dishwashers",
+                     "numberOfItems":"82",
+                     "children":null
+                  },
+                  "177":{
+                     "id":"177",
+                     "code":"DWBISISL",
+                     "url":"built-in-semi-int-slimline-dishwashers",
+                     "name":"Built In Semi Int. Slimline Dishwashers",
+                     "numberOfItems":"2",
+                     "children":null
+                  },
+                  "176":{
+                     "id":"176",
+                     "code":"DWBISI",
+                     "url":"built-in-semi-integrated-dishwashers",
+                     "name":"Built In Semi Integrated Dishwashers",
+                     "numberOfItems":"31",
+                     "children":null
+                  },
+                  "173":{
+                     "id":"173",
+                     "code":"DWBIDD",
+                     "url":"built-in-dish-drawers",
+                     "name":"Built In Dish Drawers",
+                     "numberOfItems":"5",
+                     "children":null
+                  }
+               }
+            }
+         }
+      },
+      {
+         "id":"104",
+         "code":"CO",
+         "url":"cookers",
+         "name":"Cookers",
+         "numberOfItems":1256,
+         "children":{
+            "108":{
+               "id":"108",
+               "code":"CORN",
+               "url":"range-cookers",
+               "name":"Range Cookers",
+               "numberOfItems":1039,
+               "children":{
+                  "110":{
+                     "id":"110",
+                     "code":"CORNDF",
+                     "url":"dual-fuel-range-cookers",
+                     "name":"Dual Fuel Range Cookers",
+                     "numberOfItems":497,
+                     "children":{
+                        "111":{
+                           "id":"111",
+                           "code":"CORNDF07",
+                           "url":"70cm-dual-fuel-range-cookers",
+                           "name":"70cm Dual Fuel Range Cookers",
+                           "numberOfItems":"2",
+                           "children":null
+                        },
+                        "112":{
+                           "id":"112",
+                           "code":"CORNDF08",
+                           "url":"80cm-dual-fuel-range-cookers",
+                           "name":"80cm Dual Fuel Range Cookers",
+                           "numberOfItems":"2",
+                           "children":null
+                        },
+                        "113":{
+                           "id":"113",
+                           "code":"CORNDF09",
+                           "url":"90cm-dual-fuel-range-cookers",
+                           "name":"90cm Dual Fuel Range Cookers",
+                           "numberOfItems":"194",
+                           "children":null
+                        },
+                        "114":{
+                           "id":"114",
+                           "code":"CORNDF10",
+                           "url":"100cm-dual-fuel-range-cookers",
+                           "name":"100cm Dual Fuel Range Cookers",
+                           "numberOfItems":"121",
+                           "children":null
+                        },
+                        "115":{
+                           "id":"115",
+                           "code":"CORNDF11",
+                           "url":"110cm-dual-fuel-range-cookers",
+                           "name":"110cm Dual Fuel Range Cookers",
+                           "numberOfItems":"165",
+                           "children":null
+                        },
+                        "116":{
+                           "id":"116",
+                           "code":"CORNDF12",
+                           "url":"120cm-dual-fuel-range-cookers",
+                           "name":"120cm+ Dual Fuel Range Cookers",
+                           "numberOfItems":"13",
+                           "children":null
+                        }
+                     }
+                  },
+                  "117":{
+                     "id":"117",
+                     "code":"CORNEL",
+                     "url":"electric-range-cookers",
+                     "name":"Electric Range Cookers",
+                     "numberOfItems":439,
+                     "children":{
+                        "120":{
+                           "id":"120",
+                           "code":"CORNEL09",
+                           "url":"90cm-electric-range-cookers",
+                           "name":"90cm Electric Range Cookers",
+                           "numberOfItems":"180",
+                           "children":null
+                        },
+                        "121":{
+                           "id":"121",
+                           "code":"CORNEL10",
+                           "url":"100cm-electric-range-cookers",
+                           "name":"100cm Electric Range Cookers",
+                           "numberOfItems":"106",
+                           "children":null
+                        },
+                        "122":{
+                           "id":"122",
+                           "code":"CORNEL11",
+                           "url":"110cm-electric-range-cookers",
+                           "name":"110cm Electric Range Cookers",
+                           "numberOfItems":"153",
+                           "children":null
+                        }
+                     }
+                  },
+                  "124":{
+                     "id":"124",
+                     "code":"CORNGA",
+                     "url":"gas-range-cookers",
+                     "name":"Gas Range Cookers",
+                     "numberOfItems":95,
+                     "children":{
+                        "127":{
+                           "id":"127",
+                           "code":"CORNGA09",
+                           "url":"90cm-gas-range-cookers",
+                           "name":"90cm Gas Range Cookers",
+                           "numberOfItems":"30",
+                           "children":null
+                        },
+                        "128":{
+                           "id":"128",
+                           "code":"CORNGA10",
+                           "url":"100cm-gas-range-cookers",
+                           "name":"100cm Gas Range Cookers",
+                           "numberOfItems":"31",
+                           "children":null
+                        },
+                        "129":{
+                           "id":"129",
+                           "code":"CORNGA11",
+                           "url":"110cm-gas-range-cookers",
+                           "name":"110cm Gas Range Cookers",
+                           "numberOfItems":"34",
+                           "children":null
+                        }
+                     }
+                  },
+                  "131":{
+                     "id":"131",
+                     "code":"CORNLP",
+                     "url":"lpg-range-cookers",
+                     "name":"LPG Range Cookers",
+                     "numberOfItems":8,
+                     "children":{
+                        "134":{
+                           "id":"134",
+                           "code":"CORNLP09",
+                           "url":"90cm-lpg-range-cooker",
+                           "name":"90cm LPG Range Cooker",
+                           "numberOfItems":"3",
+                           "children":null
+                        },
+                        "136":{
+                           "id":"136",
+                           "code":"CORNLP11",
+                           "url":"110cm-lpg-range-cookers",
+                           "name":"110cm LPG Range Cookers",
+                           "numberOfItems":"5",
+                           "children":null
+                        }
+                     }
+                  }
+               }
+            },
+            "138":{
+               "id":"138",
+               "code":"COSD",
+               "url":"cooker",
+               "name":"Cookers",
+               "numberOfItems":217,
+               "children":{
+                  "143":{
+                     "id":"143",
+                     "code":"COSDDF",
+                     "url":"dual-fuel-cookers",
+                     "name":"Dual Fuel Cookers",
+                     "numberOfItems":"31",
+                     "children":null
+                  },
+                  "147":{
+                     "id":"147",
+                     "code":"COSDEL",
+                     "url":"electric-cooker",
+                     "name":"Electric Cookers",
+                     "numberOfItems":104,
+                     "children":{
+                        "148":{
+                           "id":"148",
+                           "code":"COSDELDO",
+                           "url":"electric-cookers-double-oven",
+                           "name":"Electric Cookers (Double Oven)",
+                           "numberOfItems":"83",
+                           "children":null
+                        },
+                        "149":{
+                           "id":"149",
+                           "code":"COSDELHL",
+                           "url":"electric-cookers-%28high-level-grill%29",
+                           "name":"Electric Cookers (High Level Grill)",
+                           "numberOfItems":"2",
+                           "children":null
+                        },
+                        "150":{
+                           "id":"150",
+                           "code":"COSDELSG",
+                           "url":"electric-cookers-%28separate-grill%29",
+                           "name":"Electric Cookers (Separate Grill)",
+                           "numberOfItems":"7",
+                           "children":null
+                        },
+                        "151":{
+                           "id":"151",
+                           "code":"COSDELSO",
+                           "url":"electric-cookers-single-oven",
+                           "name":"Electric Cookers (Single Oven)",
+                           "numberOfItems":"12",
+                           "children":null
+                        }
+                     }
+                  },
+                  "154":{
+                     "id":"154",
+                     "code":"COSDGA",
+                     "url":"gas-cooker",
+                     "name":"Gas Cookers",
+                     "numberOfItems":82,
+                     "children":{
+                        "155":{
+                           "id":"155",
+                           "code":"COSDGADO",
+                           "url":"gas-cookers-double-oven",
+                           "name":"Gas Cookers (Double Oven)",
+                           "numberOfItems":"53",
+                           "children":null
+                        },
+                        "156":{
+                           "id":"156",
+                           "code":"COSDGAHL",
+                           "url":"gas-cookers-%28high-level-grill%29",
+                           "name":"Gas Cookers (High Level Grill)",
+                           "numberOfItems":"5",
+                           "children":null
+                        },
+                        "157":{
+                           "id":"157",
+                           "code":"COSDGASG",
+                           "url":"gas-cookers-%28separate-grill%29",
+                           "name":"Gas Cookers (Separate Grill)",
+                           "numberOfItems":"17",
+                           "children":null
+                        },
+                        "158":{
+                           "id":"158",
+                           "code":"COSDGASO",
+                           "url":"gas-cookers-single-oven",
+                           "name":"Gas Cookers (Single Oven)",
+                           "numberOfItems":"7",
+                           "children":null
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "id":"185",
+         "code":"HB",
+         "url":"hobs",
+         "name":"Hobs",
+         "numberOfItems":445,
+         "children":{
+            "186":{
+               "id":"186",
+               "code":"HBCE",
+               "url":"ceramic-hobs",
+               "name":"Ceramic Hobs",
+               "numberOfItems":"75",
+               "children":null
+            },
+            "187":{
+               "id":"187",
+               "code":"HBDO",
+               "url":"domino-hobs",
+               "name":"Domino Hobs",
+               "numberOfItems":"44",
+               "children":null
+            },
+            "188":{
+               "id":"188",
+               "code":"HBEL",
+               "url":"electric-hobs",
+               "name":"Solid Plate Hobs",
+               "numberOfItems":"10",
+               "children":null
+            },
+            "189":{
+               "id":"189",
+               "code":"HBGA",
+               "url":"gas-hobs",
+               "name":"Gas Hobs",
+               "numberOfItems":195,
+               "children":{
+                  "191":{
+                     "id":"191",
+                     "code":"HBGA4B",
+                     "url":"4-burner-gas-hobs",
+                     "name":"4 Burner Gas Hobs",
+                     "numberOfItems":"109",
+                     "children":null
+                  },
+                  "192":{
+                     "id":"192",
+                     "code":"HBGA5B",
+                     "url":"5-burner-gas-hobs",
+                     "name":"5 Burner Gas Hobs",
+                     "numberOfItems":"79",
+                     "children":null
+                  },
+                  "193":{
+                     "id":"193",
+                     "code":"HBGA6B",
+                     "url":"6-burner-gas-hobs",
+                     "name":"6 Burner Gas Hobs",
+                     "numberOfItems":"7",
+                     "children":null
+                  }
+               }
+            },
+            "195":{
+               "id":"195",
+               "code":"HBIN",
+               "url":"induction-hobs",
+               "name":"Induction Hobs",
+               "numberOfItems":"118",
+               "children":null
+            },
+            "196":{
+               "id":"196",
+               "code":"HBLP",
+               "url":"lpg-hobs",
+               "name":"LPG Hobs",
+               "numberOfItems":"3",
+               "children":null
+            }
+         }
+      },
+      {
+         "id":"200",
+         "code":"HO",
+         "url":"hoods",
+         "name":"Hoods",
+         "numberOfItems":595,
+         "children":{
+            "201":{
+               "id":"201",
+               "code":"HOCH",
+               "url":"chimney-hoods",
+               "name":"Chimney Hoods",
+               "numberOfItems":452,
+               "children":{
+                  "202":{
+                     "id":"202",
+                     "code":"HOCH04",
+                     "url":"40cm-chimney-hoods",
+                     "name":"40cm Chimney Hoods",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "203":{
+                     "id":"203",
+                     "code":"HOCH05",
+                     "url":"50cm-chimney-hoods",
+                     "name":"50cm Chimney Hoods",
+                     "numberOfItems":"1",
+                     "children":null
+                  },
+                  "204":{
+                     "id":"204",
+                     "code":"HOCH06",
+                     "url":"60cm-chimney-hoods",
+                     "name":"60cm Chimney Hoods",
+                     "numberOfItems":"78",
+                     "children":null
+                  },
+                  "205":{
+                     "id":"205",
+                     "code":"HOCH07",
+                     "url":"70cm-chimney-hoods",
+                     "name":"70cm Chimney Hoods",
+                     "numberOfItems":"28",
+                     "children":null
+                  },
+                  "206":{
+                     "id":"206",
+                     "code":"HOCH08",
+                     "url":"80cm-chimney-hoods",
+                     "name":"80cm Chimney Hoods",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "207":{
+                     "id":"207",
+                     "code":"HOCH09",
+                     "url":"90cm-chimney-hoods",
+                     "name":"90cm Chimney Hoods",
+                     "numberOfItems":"178",
+                     "children":null
+                  },
+                  "208":{
+                     "id":"208",
+                     "code":"HOCH10",
+                     "url":"100cm-chimney-hoods",
+                     "name":"100cm Chimney Hoods",
+                     "numberOfItems":"73",
+                     "children":null
+                  },
+                  "209":{
+                     "id":"209",
+                     "code":"HOCH11",
+                     "url":"110cm-chimney-hoods",
+                     "name":"110cm Chimney Hoods",
+                     "numberOfItems":"73",
+                     "children":null
+                  },
+                  "210":{
+                     "id":"210",
+                     "code":"HOCH12",
+                     "url":"120cm-chimney-hoods",
+                     "name":"120cm+ Chimney Hoods",
+                     "numberOfItems":"15",
+                     "children":null
+                  }
+               }
+            },
+            "211":{
+               "id":"211",
+               "code":"HOCN",
+               "url":"canopy-hoods",
+               "name":"Canopy Hoods",
+               "numberOfItems":"40",
+               "children":null
+            },
+            "213":{
+               "id":"213",
+               "code":"HOIG",
+               "url":"integrated-hoods",
+               "name":"Integrated Hoods",
+               "numberOfItems":"17",
+               "children":null
+            },
+            "214":{
+               "id":"214",
+               "code":"HOIS",
+               "url":"island-hoods",
+               "name":"Island Hoods",
+               "numberOfItems":"29",
+               "children":null
+            },
+            "216":{
+               "id":"216",
+               "code":"HOTE",
+               "url":"telescopic-hoods",
+               "name":"Telescopic Hoods",
+               "numberOfItems":"26",
+               "children":null
+            },
+            "217":{
+               "id":"217",
+               "code":"HOTR",
+               "url":"traditional-hoods",
+               "name":"Traditional Hoods",
+               "numberOfItems":"15",
+               "children":null
+            },
+            "401":{
+               "id":"401",
+               "code":"HODE",
+               "url":"downdraft-extractors",
+               "name":"Downdraft Extractors",
+               "numberOfItems":"8",
+               "children":null
+            },
+            "414":{
+               "id":"414",
+               "code":"HOCE",
+               "url":"ceiling-extractors",
+               "name":"Ceiling Extractors",
+               "numberOfItems":"8",
+               "children":null
+            }
+         }
+      },
+      {
+         "id":"101",
+         "code":"CM",
+         "url":"coffee-makers",
+         "name":"Coffee Makers",
+         "numberOfItems":25,
+         "children":{
+            "102":{
+               "id":"102",
+               "code":"CMBI",
+               "url":"built-in-coffee-makers",
+               "name":"Built In Coffee Makers",
+               "numberOfItems":"20",
+               "children":null
+            },
+            "103":{
+               "id":"103",
+               "code":"CMCM",
+               "url":"coffee-maker",
+               "name":"Coffee Makers",
+               "numberOfItems":"5",
+               "children":null
+            }
+         }
+      },
+      {
+         "id":"344",
+         "code":"WM",
+         "url":"warming-drawers",
+         "name":"Warming Drawers",
+         "numberOfItems":"48",
+         "children":null
+      },
+      {
+         "id":"364",
+         "code":"SB",
+         "url":"splashbacks",
+         "name":"Splashbacks",
+         "numberOfItems":137,
+         "children":{
+            "373":{
+               "id":"373",
+               "code":"SB06",
+               "url":"60cm-splashbacks",
+               "name":"60cm Splashbacks",
+               "numberOfItems":"20",
+               "children":null
+            },
+            "374":{
+               "id":"374",
+               "code":"SB07",
+               "url":"70cm-splashbacks",
+               "name":"70cm Splashbacks",
+               "numberOfItems":"10",
+               "children":null
+            },
+            "375":{
+               "id":"375",
+               "code":"SB08",
+               "url":"80cm-splashbacks",
+               "name":"80cm Splashbacks",
+               "numberOfItems":"2",
+               "children":null
+            },
+            "376":{
+               "id":"376",
+               "code":"SB09",
+               "url":"90cm-splashbacks",
+               "name":"90cm Splashbacks",
+               "numberOfItems":"42",
+               "children":null
+            },
+            "377":{
+               "id":"377",
+               "code":"SB10",
+               "url":"100cm-splashbacks",
+               "name":"100cm Splashbacks",
+               "numberOfItems":"27",
+               "children":null
+            },
+            "378":{
+               "id":"378",
+               "code":"SB11",
+               "url":"110cm-splashbacks",
+               "name":"110cm Splashbacks",
+               "numberOfItems":"23",
+               "children":null
+            },
+            "379":{
+               "id":"379",
+               "code":"SB12",
+               "url":"120cm-splashbacks",
+               "name":"120cm Splashbacks",
+               "numberOfItems":"13",
+               "children":null
+            }
+         }
+      },
+      {
+         "id":"319",
+         "code":"WD",
+         "url":"washers-%26-dryers",
+         "name":"Washers & Dryers",
+         "numberOfItems":466,
+         "children":{
+            "333":{
+               "id":"333",
+               "code":"WDWA",
+               "url":"washing-machines",
+               "name":"Washing Machines",
+               "numberOfItems":252,
+               "children":{
+                  "334":{
+                     "id":"334",
+                     "code":"WDWABI",
+                     "url":"integrated-washing-machines",
+                     "name":"Integrated Washing Machines",
+                     "numberOfItems":"22",
+                     "children":null
+                  },
+                  "339":{
+                     "id":"339",
+                     "code":"WDWAWA",
+                     "url":"freestanding-washing-machines",
+                     "name":"Freestanding Washing Machines",
+                     "numberOfItems":"230",
+                     "children":null
+                  }
+               }
+            },
+            "320":{
+               "id":"320",
+               "code":"WDDR",
+               "url":"tumble-dryers",
+               "name":"Tumble Dryers",
+               "numberOfItems":134,
+               "children":{
+                  "390":{
+                     "id":"390",
+                     "code":"WDDRFS",
+                     "url":"freestanding-tumble-dryers",
+                     "name":"Freestanding Tumble Dryers",
+                     "numberOfItems":130,
+                     "children":{
+                        "323":{
+                           "id":"323",
+                           "code":"WDDRCN",
+                           "url":"condenser-dryers",
+                           "name":"Condenser Dryers",
+                           "numberOfItems":"107",
+                           "children":null
+                        },
+                        "331":{
+                           "id":"331",
+                           "code":"WDDRVNCM",
+                           "url":"compact-vented-dryers",
+                           "name":"Compact Vented Dryers",
+                           "numberOfItems":"2",
+                           "children":null
+                        },
+                        "327":{
+                           "id":"327",
+                           "code":"WDDRSD",
+                           "url":"spin-dryers",
+                           "name":"Spin Dryers",
+                           "numberOfItems":"2",
+                           "children":null
+                        },
+                        "329":{
+                           "id":"329",
+                           "code":"WDDRVN",
+                           "url":"vented-dryers",
+                           "name":"Vented Dryers",
+                           "numberOfItems":"19",
+                           "children":null
+                        }
+                     }
+                  },
+                  "321":{
+                     "id":"321",
+                     "code":"WDDRBI",
+                     "url":"integrated-tumble-dryers",
+                     "name":"Integrated Tumble Dryers",
+                     "numberOfItems":4,
+                     "children":{
+                        "330":{
+                           "id":"330",
+                           "code":"WDDRVNBI",
+                           "url":"integrated-vented-dryers",
+                           "name":"Integrated Vented Dryers",
+                           "numberOfItems":"2",
+                           "children":null
+                        },
+                        "324":{
+                           "id":"324",
+                           "code":"WDDRCNBI",
+                           "url":"integrated-condenser-dryers",
+                           "name":"Integrated Condenser Dryers",
+                           "numberOfItems":"2",
+                           "children":null
+                        }
+                     }
+                  }
+               }
+            },
+            "340":{
+               "id":"340",
+               "code":"WDWD",
+               "url":"washer-dryers",
+               "name":"Washer Dryers",
+               "numberOfItems":80,
+               "children":{
+                  "342":{
+                     "id":"342",
+                     "code":"WDWDWD",
+                     "url":"washer-dryer",
+                     "name":"Freestanding Washer Dryers",
+                     "numberOfItems":"59",
+                     "children":null
+                  },
+                  "341":{
+                     "id":"341",
+                     "code":"WDWDBI",
+                     "url":"integrated-washer-dryers",
+                     "name":"Integrated Washer Dryers",
+                     "numberOfItems":"21",
+                     "children":null
+                  }
+               }
+            }
+         }
+      },
+      {
+         "id":"2",
+         "code":"AC",
+         "url":"air-conditioning",
+         "name":"Air Conditioning",
+         "numberOfItems":"4",
+         "children":null
+      },
+      {
+         "id":"3",
+         "code":"AS",
+         "url":"accessories",
+         "name":"Accessories",
+         "numberOfItems":397,
+         "children":{
+            "6":{
+               "id":"6",
+               "code":"ASDW",
+               "url":"dishwasher-accessories",
+               "name":"Dishwasher Accessories",
+               "numberOfItems":22,
+               "children":{
+                  "7":{
+                     "id":"7",
+                     "code":"ASDWBK",
+                     "url":"dishwasher-build-under-kits",
+                     "name":"Build In\/Under Kits",
+                     "numberOfItems":"1",
+                     "children":null
+                  },
+                  "8":{
+                     "id":"8",
+                     "code":"ASDWDP",
+                     "url":"dishwasher-door-panels",
+                     "name":"Door Panels",
+                     "numberOfItems":"11",
+                     "children":null
+                  },
+                  "9":{
+                     "id":"9",
+                     "code":"ASDWMS",
+                     "url":"miscellaneous-dishwasher-accessories",
+                     "name":"Miscellaneous Accessories",
+                     "numberOfItems":"9",
+                     "children":null
+                  },
+                  "10":{
+                     "id":"10",
+                     "code":"ASDWTB",
+                     "url":"dishwasher-trays-baskets-and-inserts",
+                     "name":"Trays, Baskets and Inserts",
+                     "numberOfItems":"1",
+                     "children":null
+                  }
+               }
+            },
+            "13":{
+               "id":"13",
+               "code":"ASHB",
+               "url":"hob-accessories",
+               "name":"Hob Accessories",
+               "numberOfItems":31,
+               "children":{
+                  "14":{
+                     "id":"14",
+                     "code":"ASHBMS",
+                     "url":"miscellaneous-hob-accessories",
+                     "name":"Miscellaneous Accessories",
+                     "numberOfItems":"31",
+                     "children":null
+                  }
+               }
+            },
+            "16":{
+               "id":"16",
+               "code":"ASHO",
+               "url":"hood-accessories",
+               "name":"Hood Accessories",
+               "numberOfItems":154,
+               "children":{
+                  "18":{
+                     "id":"18",
+                     "code":"ASHODK",
+                     "url":"hood-ducting-kits",
+                     "name":"Ducting Kits",
+                     "numberOfItems":"23",
+                     "children":null
+                  },
+                  "19":{
+                     "id":"19",
+                     "code":"ASHOEM",
+                     "url":"hood-external-motors",
+                     "name":"External Motors",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "20":{
+                     "id":"20",
+                     "code":"ASHOFL",
+                     "url":"hood-filters",
+                     "name":"Filters",
+                     "numberOfItems":"72",
+                     "children":null
+                  },
+                  "22":{
+                     "id":"22",
+                     "code":"ASHOMS",
+                     "url":"miscellaneous-hood-accessories",
+                     "name":"Miscellaneous Accessories",
+                     "numberOfItems":"28",
+                     "children":null
+                  },
+                  "23":{
+                     "id":"23",
+                     "code":"ASHORK",
+                     "url":"hood-recirculating-kits",
+                     "name":"Recirculating Kits",
+                     "numberOfItems":"28",
+                     "children":null
+                  }
+               }
+            },
+            "24":{
+               "id":"24",
+               "code":"ASMC",
+               "url":"microwave-accessories",
+               "name":"Microwave Accessories",
+               "numberOfItems":"3",
+               "children":null
+            },
+            "25":{
+               "id":"25",
+               "code":"ASMS",
+               "url":"miscellaneous-accessories",
+               "name":"Miscellaneous Accessories",
+               "numberOfItems":"3",
+               "children":null
+            },
+            "26":{
+               "id":"26",
+               "code":"ASOV",
+               "url":"oven-accessories",
+               "name":"Oven Accessories",
+               "numberOfItems":74,
+               "children":{
+                  "27":{
+                     "id":"27",
+                     "code":"ASOVAD",
+                     "url":"oven-accessory-drawers",
+                     "name":"Accessory Drawers",
+                     "numberOfItems":"1",
+                     "children":null
+                  },
+                  "28":{
+                     "id":"28",
+                     "code":"ASOVCL",
+                     "url":"oven-stay-clean-liners",
+                     "name":"Stay Clean Liners",
+                     "numberOfItems":"13",
+                     "children":null
+                  },
+                  "29":{
+                     "id":"29",
+                     "code":"ASOVMS",
+                     "url":"miscellaneous-oven-accessories",
+                     "name":"Miscellaneous Accessories",
+                     "numberOfItems":"22",
+                     "children":null
+                  },
+                  "30":{
+                     "id":"30",
+                     "code":"ASOVOD",
+                     "url":"oven-dishes",
+                     "name":"Oven Dishes",
+                     "numberOfItems":"9",
+                     "children":null
+                  },
+                  "32":{
+                     "id":"32",
+                     "code":"ASOVTO",
+                     "url":"oven-telescopic-kits",
+                     "name":"Telescopic Kits",
+                     "numberOfItems":"18",
+                     "children":null
+                  },
+                  "33":{
+                     "id":"33",
+                     "code":"ASOVTR",
+                     "url":"oven-trays-and-racks",
+                     "name":"Trays and Racks",
+                     "numberOfItems":"11",
+                     "children":null
+                  }
+               }
+            },
+            "35":{
+               "id":"35",
+               "code":"ASRG",
+               "url":"refrigeration-accessories",
+               "name":"Refrigeration Accessories",
+               "numberOfItems":35,
+               "children":{
+                  "36":{
+                     "id":"36",
+                     "code":"ASRGFL",
+                     "url":"refrigeration-filters",
+                     "name":"Filters",
+                     "numberOfItems":"1",
+                     "children":null
+                  },
+                  "37":{
+                     "id":"37",
+                     "code":"ASRGMS",
+                     "url":"miscellaneous-refrigeration-accessories",
+                     "name":"Miscellaneous Accessories",
+                     "numberOfItems":"34",
+                     "children":null
+                  }
+               }
+            },
+            "56":{
+               "id":"56",
+               "code":"ASWD",
+               "url":"laundry-appliance-accessories",
+               "name":"Laundry Accessories",
+               "numberOfItems":62,
+               "children":{
+                  "57":{
+                     "id":"57",
+                     "code":"ASWDDK",
+                     "url":"laundry-appliance-ducting-kits",
+                     "name":"Ducting Kits",
+                     "numberOfItems":"1",
+                     "children":null
+                  },
+                  "58":{
+                     "id":"58",
+                     "code":"ASWDMS",
+                     "url":"miscellaneous-laundry-appliance-accessories",
+                     "name":"Miscellaneous Accessories",
+                     "numberOfItems":"42",
+                     "children":null
+                  },
+                  "59":{
+                     "id":"59",
+                     "code":"ASWDSK",
+                     "url":"laundry-appliance-stacking-kits",
+                     "name":"Stacking Kits",
+                     "numberOfItems":"19",
+                     "children":null
+                  }
+               }
+            },
+            "53":{
+               "id":"53",
+               "code":"ASVC",
+               "url":"vacuum-cleaner-accessories",
+               "name":"Vacuum Cleaner Accessories",
+               "numberOfItems":7,
+               "children":{
+                  "54":{
+                     "id":"54",
+                     "code":"ASVCMS",
+                     "url":"miscellaneous-vacuum-cleaner-accessories",
+                     "name":"Miscellaneous Accessories",
+                     "numberOfItems":"5",
+                     "children":null
+                  },
+                  "349":{
+                     "id":"349",
+                     "code":"ASVCSM",
+                     "url":"steam-mop-accessories",
+                     "name":"Steam Mop Accessories",
+                     "numberOfItems":"2",
+                     "children":null
+                  }
+               }
+            },
+            "402":{
+               "id":"402",
+               "code":"ASCO",
+               "url":"cooker-accessories",
+               "name":"Cooking Accessories",
+               "numberOfItems":"6",
+               "children":null
+            }
+         }
+      },
+      {
+         "id":"236",
+         "code":"OV",
+         "url":"ovens",
+         "name":"Ovens",
+         "numberOfItems":431,
+         "children":{
+            "237":{
+               "id":"237",
+               "code":"OVCM",
+               "url":"compact-ovens",
+               "name":"Compact Ovens",
+               "numberOfItems":"14",
+               "children":null
+            },
+            "238":{
+               "id":"238",
+               "code":"OVEL",
+               "url":"electric-ovens",
+               "name":"Electric Ovens",
+               "numberOfItems":338,
+               "children":{
+                  "240":{
+                     "id":"240",
+                     "code":"OVELDOBI",
+                     "url":"double-built-in-electric-ovens",
+                     "name":"Double Built In Electric Ovens",
+                     "numberOfItems":"69",
+                     "children":null
+                  },
+                  "241":{
+                     "id":"241",
+                     "code":"OVELDOBU",
+                     "url":"double-built-under-electric-ovens",
+                     "name":"Double Built Under Electric Ovens",
+                     "numberOfItems":"43",
+                     "children":null
+                  },
+                  "244":{
+                     "id":"244",
+                     "code":"OVELSIBI",
+                     "url":"single-built-in-electric-ovens",
+                     "name":"Single Built In Electric Ovens",
+                     "numberOfItems":"226",
+                     "children":null
+                  }
+               }
+            },
+            "246":{
+               "id":"246",
+               "code":"OVGA",
+               "url":"gas-ovens",
+               "name":"Gas Ovens",
+               "numberOfItems":29,
+               "children":{
+                  "247":{
+                     "id":"247",
+                     "code":"OVGADOBI",
+                     "url":"double-built-in-gas-ovens",
+                     "name":"Double Built In Gas Ovens",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "248":{
+                     "id":"248",
+                     "code":"OVGADOBU",
+                     "url":"double-built-under-gas-ovens",
+                     "name":"Double Built Under Gas Ovens",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "249":{
+                     "id":"249",
+                     "code":"OVGASGBI",
+                     "url":"built-in-gas-ovens-%28separate-grill%29",
+                     "name":"Built In Gas Ovens (Separate Grill)",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "250":{
+                     "id":"250",
+                     "code":"OVGASGBU",
+                     "url":"built-under-gas-ovens-%28separate-grill%29",
+                     "name":"Built Under Gas Ovens (Separate Grill)",
+                     "numberOfItems":"3",
+                     "children":null
+                  },
+                  "251":{
+                     "id":"251",
+                     "code":"OVGASIBI",
+                     "url":"single-built-in-gas-ovens",
+                     "name":"Single Built In Gas Ovens",
+                     "numberOfItems":"17",
+                     "children":null
+                  }
+               }
+            },
+            "252":{
+               "id":"252",
+               "code":"OVST",
+               "url":"steam-ovens",
+               "name":"Steam Ovens",
+               "numberOfItems":"50",
+               "children":null
+            }
+         }
+      },
+      {
+         "id":"256",
+         "code":"RG",
+         "url":"refrigeration",
+         "name":"Refrigeration",
+         "numberOfItems":989,
+         "children":{
+            "257":{
+               "id":"257",
+               "code":"RGAM",
+               "url":"american-fridge-freezers",
+               "name":"American Fridge Freezers",
+               "numberOfItems":110,
+               "children":{
+                  "258":{
+                     "id":"258",
+                     "code":"RGAMAM",
+                     "url":"freestanding-american-fridge-freezers",
+                     "name":"American Fridge Freezers",
+                     "numberOfItems":"109",
+                     "children":null
+                  },
+                  "259":{
+                     "id":"259",
+                     "code":"RGAMAMBI",
+                     "url":"integrated-american-fridge-freezers",
+                     "name":"Integrated American Fridge Freezers",
+                     "numberOfItems":"1",
+                     "children":null
+                  }
+               }
+            },
+            "262":{
+               "id":"262",
+               "code":"RGFF",
+               "url":"fridge-freezers",
+               "name":"Fridge Freezers",
+               "numberOfItems":390,
+               "children":{
+                  "385":{
+                     "id":"385",
+                     "code":"RGFFFS",
+                     "url":"freestanding-fridge-freezers",
+                     "name":"Freestanding Fridge Freezers",
+                     "numberOfItems":"310",
+                     "children":null
+                  },
+                  "384":{
+                     "id":"384",
+                     "code":"RGFFBI",
+                     "url":"integrated-fridge-freezers",
+                     "name":"Integrated Fridge Freezers",
+                     "numberOfItems":"80",
+                     "children":null
+                  }
+               }
+            },
+            "267":{
+               "id":"267",
+               "code":"RGFR",
+               "url":"fridges",
+               "name":"Fridges",
+               "numberOfItems":257,
+               "children":{
+                  "387":{
+                     "id":"387",
+                     "code":"RGFRFS",
+                     "url":"freestanding-fridges",
+                     "name":"Freestanding Fridges",
+                     "numberOfItems":154,
+                     "children":{
+                        "272":{
+                           "id":"272",
+                           "code":"RGFRCM",
+                           "url":"compact-fridges",
+                           "name":"Compact Fridges",
+                           "numberOfItems":"2",
+                           "children":null
+                        },
+                        "273":{
+                           "id":"273",
+                           "code":"RGFRIB",
+                           "url":"fridges-%28ice-box%29",
+                           "name":"Fridges (Ice Box)",
+                           "numberOfItems":"24",
+                           "children":null
+                        },
+                        "274":{
+                           "id":"274",
+                           "code":"RGFRLA",
+                           "url":"larder-fridges",
+                           "name":"Larder Fridges",
+                           "numberOfItems":"27",
+                           "children":null
+                        },
+                        "275":{
+                           "id":"275",
+                           "code":"RGFRTAIB",
+                           "url":"tall-fridges-%28ice-box%29",
+                           "name":"Tall Fridges (Ice Box)",
+                           "numberOfItems":"51",
+                           "children":null
+                        },
+                        "276":{
+                           "id":"276",
+                           "code":"RGFRTALA",
+                           "url":"tall-larder-fridges",
+                           "name":"Tall Larder Fridges",
+                           "numberOfItems":"50",
+                           "children":null
+                        }
+                     }
+                  },
+                  "386":{
+                     "id":"386",
+                     "code":"RGFRBI",
+                     "url":"integrated-fridges",
+                     "name":"Integrated Fridges",
+                     "numberOfItems":103,
+                     "children":{
+                        "268":{
+                           "id":"268",
+                           "code":"RGFRBIIB",
+                           "url":"built-in-fridges-%28ice-box%29",
+                           "name":"Built In Fridges (Ice Box)",
+                           "numberOfItems":"16",
+                           "children":null
+                        },
+                        "269":{
+                           "id":"269",
+                           "code":"RGFRBILA",
+                           "url":"built-in-larder-fridges",
+                           "name":"Built In Larder Fridges",
+                           "numberOfItems":"53",
+                           "children":null
+                        },
+                        "270":{
+                           "id":"270",
+                           "code":"RGFRBUIB",
+                           "url":"built-under-fridges-%28ice-box%29",
+                           "name":"Built Under Fridges (Ice Box)",
+                           "numberOfItems":"12",
+                           "children":null
+                        },
+                        "271":{
+                           "id":"271",
+                           "code":"RGFRBULA",
+                           "url":"built-under-larder-fridges",
+                           "name":"Built Under Larder Fridges",
+                           "numberOfItems":"22",
+                           "children":null
+                        }
+                     }
+                  }
+               }
+            },
+            "277":{
+               "id":"277",
+               "code":"RGFZ",
+               "url":"freezers",
+               "name":"Freezers",
+               "numberOfItems":178,
+               "children":{
+                  "388":{
+                     "id":"388",
+                     "code":"RGFZFS",
+                     "url":"freestanding-freezers",
+                     "name":"Freestanding Freezers",
+                     "numberOfItems":121,
+                     "children":{
+                        "282":{
+                           "id":"282",
+                           "code":"RGFZCH",
+                           "url":"chest-freezers",
+                           "name":"Chest Freezers",
+                           "numberOfItems":"29",
+                           "children":null
+                        },
+                        "283":{
+                           "id":"283",
+                           "code":"RGFZCM",
+                           "url":"compact-freezers",
+                           "name":"Compact Freezers",
+                           "numberOfItems":"2",
+                           "children":null
+                        },
+                        "287":{
+                           "id":"287",
+                           "code":"RGFZFZ",
+                           "url":"freezer",
+                           "name":"Undercounter Freezers",
+                           "numberOfItems":"30",
+                           "children":null
+                        },
+                        "288":{
+                           "id":"288",
+                           "code":"RGFZTA",
+                           "url":"tall-freezers",
+                           "name":"Tall Freezers",
+                           "numberOfItems":"60",
+                           "children":null
+                        }
+                     }
+                  },
+                  "278":{
+                     "id":"278",
+                     "code":"RGFZBI",
+                     "url":"integrated-freezers",
+                     "name":"Integrated Freezers",
+                     "numberOfItems":57,
+                     "children":{
+                        "389":{
+                           "id":"389",
+                           "code":"RGFZBIFZ",
+                           "url":"built-in-freezers",
+                           "name":"Built in Freezers",
+                           "numberOfItems":"37",
+                           "children":null
+                        },
+                        "280":{
+                           "id":"280",
+                           "code":"RGFZBU",
+                           "url":"built-under-freezers",
+                           "name":"Built Under Freezers",
+                           "numberOfItems":"20",
+                           "children":null
+                        }
+                     }
+                  }
+               }
+            },
+            "291":{
+               "id":"291",
+               "code":"RGWC",
+               "url":"wine-coolers",
+               "name":"Wine Coolers",
+               "numberOfItems":54,
+               "children":{
+                  "293":{
+                     "id":"293",
+                     "code":"RGWCWC",
+                     "url":"wine-cooler",
+                     "name":"Freestanding Wine Coolers",
+                     "numberOfItems":"43",
+                     "children":null
+                  },
+                  "292":{
+                     "id":"292",
+                     "code":"RGWCBI",
+                     "url":"integrated-wine-coolers",
+                     "name":"Integrated Wine Coolers",
+                     "numberOfItems":"11",
+                     "children":null
+                  }
+               }
+            }
+         }
+      },
+      {
+         "id":"303",
+         "code":"SM",
+         "url":"small-appliances",
+         "name":"Small Appliances",
+         "numberOfItems":97,
+         "children":{
+            "306":{
+               "id":"306",
+               "code":"SMKE",
+               "url":"kettles",
+               "name":"Kettles",
+               "numberOfItems":"20",
+               "children":null
+            },
+            "307":{
+               "id":"307",
+               "code":"SMTO",
+               "url":"toasters",
+               "name":"Toasters",
+               "numberOfItems":"22",
+               "children":null
+            },
+            "304":{
+               "id":"304",
+               "code":"SMBR",
+               "url":"breadmakers",
+               "name":"Breadmakers",
+               "numberOfItems":"1",
+               "children":null
+            },
+            "305":{
+               "id":"305",
+               "code":"SMIR",
+               "url":"irons",
+               "name":"Irons",
+               "numberOfItems":"9",
+               "children":null
+            },
+            "347":{
+               "id":"347",
+               "code":"SMFM",
+               "url":"food-mixers",
+               "name":"Food Mixers",
+               "numberOfItems":"7",
+               "children":null
+            },
+            "353":{
+               "id":"353",
+               "code":"SMMC",
+               "url":"multi-cookers",
+               "name":"Multi Cookers",
+               "numberOfItems":"2",
+               "children":null
+            },
+            "355":{
+               "id":"355",
+               "code":"SMSC",
+               "url":"slow-cookers",
+               "name":"Slow Cookers",
+               "numberOfItems":"3",
+               "children":null
+            },
+            "357":{
+               "id":"357",
+               "code":"SMSP",
+               "url":"saucepans",
+               "name":"Saucepans",
+               "numberOfItems":"5",
+               "children":null
+            },
+            "392":{
+               "id":"392",
+               "code":"SMFA",
+               "url":"fans",
+               "name":"Fans & Heaters",
+               "numberOfItems":"7",
+               "children":null
+            },
+            "393":{
+               "id":"393",
+               "code":"SMHB",
+               "url":"hand-blenders",
+               "name":"Hand Blenders",
+               "numberOfItems":"1",
+               "children":null
+            },
+            "394":{
+               "id":"394",
+               "code":"SMFP",
+               "url":"food-processors",
+               "name":"Food Processors",
+               "numberOfItems":"10",
+               "children":null
+            },
+            "398":{
+               "id":"398",
+               "code":"SMST",
+               "url":"steamers",
+               "name":"Steamers",
+               "numberOfItems":"1",
+               "children":null
+            },
+            "399":{
+               "id":"399",
+               "code":"SMEB",
+               "url":"electric-blankets",
+               "name":"Electric Blankets",
+               "numberOfItems":"9",
+               "children":null
+            }
+         }
+      },
+      {
+         "id":"311",
+         "code":"VC",
+         "url":"vacuum-cleaners",
+         "name":"Vacuum Cleaners",
+         "numberOfItems":75,
+         "children":{
+            "312":{
+               "id":"312",
+               "code":"VCCY",
+               "url":"cylinder-vacuum-cleaners",
+               "name":"Cylinder Vacuum Cleaners",
+               "numberOfItems":"36",
+               "children":null
+            },
+            "314":{
+               "id":"314",
+               "code":"VCHH",
+               "url":"hand-held-vacuum-cleaners",
+               "name":"Hand Held Vacuum Cleaners",
+               "numberOfItems":"13",
+               "children":null
+            },
+            "315":{
+               "id":"315",
+               "code":"VCUR",
+               "url":"upright-vacuum-cleaners",
+               "name":"Upright Vacuum Cleaners",
+               "numberOfItems":"11",
+               "children":null
+            },
+            "348":{
+               "id":"348",
+               "code":"VCSM",
+               "url":"steam-mops",
+               "name":"Steam Mops",
+               "numberOfItems":"1",
+               "children":null
+            },
+            "397":{
+               "id":"397",
+               "code":"VCRC",
+               "url":"robotic-cleaners",
+               "name":"Robotic Cleaners",
+               "numberOfItems":"14",
+               "children":null
+            }
+         }
+      },
+      {
+         "id":"220",
+         "code":"MC",
+         "url":"microwaves",
+         "name":"Microwaves",
+         "numberOfItems":159,
+         "children":{
+            "221":{
+               "id":"221",
+               "code":"MCBI",
+               "url":"built-in-microwaves",
+               "name":"Built In Microwaves",
+               "numberOfItems":115,
+               "children":{
+                  "223":{
+                     "id":"223",
+                     "code":"MCBICM",
+                     "url":"built-in-combination-microwaves",
+                     "name":"Built In Combination Microwaves",
+                     "numberOfItems":"54",
+                     "children":null
+                  },
+                  "224":{
+                     "id":"224",
+                     "code":"MCBIMC",
+                     "url":"built-in-standard-microwaves",
+                     "name":"Built In Microwaves",
+                     "numberOfItems":"29",
+                     "children":null
+                  },
+                  "225":{
+                     "id":"225",
+                     "code":"MCBIMG",
+                     "url":"built-in-microwaves-with-grill",
+                     "name":"Built In Microwaves with Grill",
+                     "numberOfItems":"32",
+                     "children":null
+                  }
+               }
+            },
+            "229":{
+               "id":"229",
+               "code":"MCMC",
+               "url":"microwave",
+               "name":"Microwaves",
+               "numberOfItems":44,
+               "children":{
+                  "230":{
+                     "id":"230",
+                     "code":"MCMCCM",
+                     "url":"combination-microwaves",
+                     "name":"Combination Microwaves",
+                     "numberOfItems":"14",
+                     "children":null
+                  },
+                  "231":{
+                     "id":"231",
+                     "code":"MCMCGR",
+                     "url":"microwaves-with-grill",
+                     "name":"Microwaves with Grill",
+                     "numberOfItems":"5",
+                     "children":null
+                  },
+                  "232":{
+                     "id":"232",
+                     "code":"MCMCMC",
+                     "url":"standard-microwaves",
+                     "name":"Microwaves",
+                     "numberOfItems":"25",
+                     "children":null
+                  }
+               }
+            }
+         }
+      }
+   ]
+}

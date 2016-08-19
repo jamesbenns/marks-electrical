@@ -1,0 +1,125 @@
+<ion-view>
+  <ion-content>
+  <div class="location-bar">{{product.name}}</div>
+
+	<ion-slide-box on-slide-changed="slideHasChanged($index)" class="product-slide-box">
+	  <ion-slide ng-repeat="image in product.images" class="product-slide">
+		<img ng-src="{{image}}" class="product-img" ng-class="{shrink: tab !== 1}">
+	  </ion-slide>
+	</ion-slide-box>
+
+<div ng-show="tab == 1">
+	  <div class="item">
+    <div class="row no-padding">
+      <div class="col col-67 no-padding">
+<!--         <h2 class="text-overflow">{{product.name}}</h2>
+ -->        <h2 style="margin-top: 4px;"><stars rating="3"></stars> (12)</h2>
+            <h2><span ng-show="product.stock" class="balanced">In stock!</span><span ng-hide="product.stock" class="assertive">Out of stock!</span></h2>
+      </div>
+      <div class="col col-33 no-padding" style="text-align: right;">
+        <h2 class="price">{{product.price | currency : '£'}}</h2>
+        <h2 ng-show="product.saving" class="assertive">Save £50</h2>
+      </div>
+    </div>
+
+  <button class="button button-block button-small button-dark add-to-cart" ng-click="addToCart(product)" ng-disabled="checkCart(product.id)">
+    <span ng-show="checkCart(product.id)"><i class="icon ion-checkmark"></i> Added to your Cart</span><span ng-hide="checkCart(product.id)">Add to Cart</span>
+  </button>
+
+  </div>
+
+<div class="list">
+
+  <div class="item item-divider">
+    Inexpensive Excellence
+  </div>
+
+  <div class="item text" href="#">
+	<p>This item is In Stock at our warehouse and ready for immediate delivery.</p>
+
+<p>We’ll give you a 2 hour timeslot the evening before your delivery date, so you'll know what time we’ll be at your address. (Note: For evening/same day deliveries, you will receive your timeslot in the afternoon on the day of your delivery.)</p>
+  </div>
+  <div class="item item-divider">
+    Multi Channel Sound
+  </div>
+
+  <div class="item text" href="#">
+	<p>This item is In Stock at our warehouse and ready for immediate delivery.</p>
+
+<p>We usually offer next day delivery to most parts of England and Wales, and unlike many of our competitors we also offer free weekend deliveries.</p>
+
+  </div>
+
+
+</div>
+
+</div>
+<div ng-show="tab == 2">
+
+<div class="list">
+
+  <div class="item item-divider">
+    Reviews
+  </div>
+
+  <div class="item text" href="#">
+	<p>Bla bla bla</p>
+  </div>
+
+</div>
+
+</div>
+<div ng-show="tab == 3">
+
+<div class="list">
+
+  <div class="item item-divider">
+    Delivery
+  </div>
+
+  <div class="item text" href="#">
+	<p>This item is In Stock at our warehouse and ready for immediate delivery.</p>
+
+<p>We usually offer next day delivery to most parts of England and Wales, and unlike many of our competitors we also offer free weekend deliveries.</p>
+
+<p>In the East Midlands, we also provide same day delivery, subject to availability.</p>
+
+<p>We’ll give you a 2 hour timeslot the evening before your delivery date, so you'll know what time we’ll be at your address. (Note: For evening/same day deliveries, you will receive your timeslot in the afternoon on the day of your delivery.)</p>
+  </div>
+  <div class="item item-divider">
+    Click and Collect from our Warehouse
+  </div>
+
+  <div class="item text" href="#">
+	<p>This item is In Stock at our warehouse and ready for immediate delivery.</p>
+
+<p>We usually offer next day delivery to most parts of England and Wales, and unlike many of our competitors we also offer free weekend deliveries.</p>
+
+<p>In the East Midlands, we also provide same day delivery, subject to availability.</p>
+
+<p>We’ll give you a 2 hour timeslot the evening before your delivery date, so you'll know what time we’ll be at your address. (Note: For evening/same day deliveries, you will receive your timeslot in the afternoon on the day of your delivery.)</p>
+  </div>
+
+
+</div>
+
+</div>
+
+  </ion-content>
+  <div class="tabs-background-me tabs-color-light">
+    <div class="tabs tabs-icon-top">
+      <a class="tab-item" ng-class="{active: tab == 1}" ng-click="tab = 1">
+        <i class="icon ion-pricetags"></i>
+        Specs
+      </a>
+      <a class="tab-item" ng-class="{active: tab == 2}" ng-click="tab = 2">
+        <i class="icon ion-star"></i>
+        Reviews
+      </a>
+      <a class="tab-item" ng-class="{active: tab == 3}" ng-click="tab = 3">
+        <i class="icon ion-information-circled"></i>
+        Details
+      </a>
+    </div>
+  </div>
+</ion-view>

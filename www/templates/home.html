@@ -1,0 +1,73 @@
+<ion-view>
+    <ion-nav-bar class="bar-light">
+
+        <ion-nav-back-button class="button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+
+        <ion-nav-title>
+            <img class="title-image" src="img/logo.png" />
+        </ion-nav-title>
+
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+            </button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-icon button-clear ion-ios-cart" menu-toggle="right">
+            </button>
+        </ion-nav-buttons>
+
+    </ion-nav-bar>
+    <ion-content style="background: #0097ff">
+
+<div class="row responsive-sm padding">
+  <div class="col-50 col-offset-25">
+  <div class="category-item-container shadow" ng-repeat="category in categories track by $index" ng-style="{'background-image' : 'url( {{category.imageUrl}} )'}">
+    <div ng-click="setCategory(category.children, category.url)" class="category-item">
+      <h2>{{category.name}}</h2>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--             <div class="product-finder">
+                <span class="product-finder-title">
+                  Find the product for you
+                </span>
+                <div class="row">
+                    <div class="col category-box"><img src="./img/television.png" class="finder-icon"> Audio Visual
+                    </div>
+                    <div class="col category-box"><img src="./img/stove.png" class="finder-icon"> Cooking
+                    </div>
+                    <div class="col category-box"><img src="./img/fridge.png" class="finder-icon"> Refrigeration
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col category-box"><img src="./img/washing-machine.png" class="finder-icon"> Laundry
+                    </div>
+                    <div class="col category-box"><img src="./img/dishwasher.png" class="finder-icon"> Dishwashers
+                    </div>
+                    <div class="col category-box"><img src="./img/kettle.png" class="finder-icon"> Small Appliances
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+    </ion-content>
+</ion-view>

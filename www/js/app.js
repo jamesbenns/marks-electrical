@@ -22,6 +22,34 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
+.factory('shoppingCart',['$rootScope', function($rootScope){
+  return {
+    addToCart: function( product ){
+          $rootScope.inCart.push(product);
+          return true;
+    },
+    removeFromCart: function( index ){
+              $rootScope.inCart.splice(index, 1);
+        }
+    }
+}])
+
+.directive('stars', function() {
+  return {
+    restrict: 'E',
+    scope: {
+      customerInfo: '=rating'
+    },
+    template: function(elem, attr) {
+      var fullStars = Math.round(attr.rating);
+      var emptyStars = 5 - fullStars;
+      var fullIcon = '<i class="icon ion-ios-star"></i>';
+      var emptyIcon = '<i class="icon ion-ios-star grey"></i>';
+      return fullIcon.repeat(fullStars) + emptyIcon.repeat(emptyStars);
+    }
+  };
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
@@ -49,25 +77,45 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('app.index', {
-      url: '/index',
+    .state('app.home', {
+      url: '/home',
       views: {
         'menuContent': {
-          templateUrl: 'templates/index.html',
-          controller: 'IndexCtrl'
+          templateUrl: 'templates/home.html',
+          controller: 'HomeCtrl'
         }
       }
     })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.category', {
+    url: '/category/:categoryName',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/category.html',
+        controller: 'CategoryCtrl'
+      }
+    }
+  })
+
+  .state('app.finder', {
+    url: '/finder/:categories',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/finder.html',
+        controller: 'FinderCtrl'
+      }
+    }
+  })
+
+  .state('app.product', {
+    url: '/product/:product',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/product.html',
+        controller: 'ProductCtrl'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/index');
+  $urlRouterProvider.otherwise('/app/home');
 });

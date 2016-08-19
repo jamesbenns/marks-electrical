@@ -1,0 +1,13 @@
+<ion-view>
+  <ion-content style="background: #0097ff">
+    <div class="row responsive-sm padding">
+      <div class="col-50 col-offset-25">
+        <div class="category-item-container shadow" ng-repeat="category in categories track by $index" ng-style="{'background-image' : 'url( {{category.imageUrl}} )'}">
+          <div ng-click="setCategory(category.children, category.url)" class="category-item">
+            <h2>{{category.name}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
