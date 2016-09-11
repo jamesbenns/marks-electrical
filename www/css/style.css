@@ -45,7 +45,7 @@
 
 .location-bar {
 	background: #0097ff;
-	height: 34px;
+	min-height: 34px;
 	width: 100%;
 	color: #fff;
 	padding: 5px;
@@ -87,6 +87,18 @@
 	font-size: 16px;
 }
 
+.result h2 {
+	white-space: normal;
+}
+
+.buttons + .buttons {
+	display: none;
+}
+
+.hide + .buttons {
+	display: block;
+}
+
 .no-padding {
 	padding: 0px;
 }
@@ -104,7 +116,7 @@ stars i {
 .product-slide-box {
 	background: #fff; 
 	padding-top: 20px; 
-	padding-bottom: 50px; 
+	padding-bottom: 20px; 
 	text-align: center;
 }
 
@@ -150,13 +162,25 @@ input {
 	color: inherit;
 }
 
+.search {
+	background: #ccc;
+}
+
+.search input {
+	width: 100%;
+    color: #ccc;
+    text-align: center;
+    background: #fff;
+    border-radius: 5px;
+}
+
 .category-item-container {
 	background: #fff;
 	border-radius: 5px;
 	padding-top: 50%;
-    background-size: 50%;
+    background-size: 40%;
     background-repeat: no-repeat;
-    background-position: right 10px bottom -26px;
+    background-position: right 10px bottom 10px;
     position: relative;
     margin-bottom: 10px !important;
 }
@@ -171,7 +195,9 @@ input {
 
 .category-item h2 {
 	color: #444;
-	font-size: 25px;
+	font-size: 18px;
+	width: 80%;
+	text-transform: uppercase;
 }
 
 .small-padding {
@@ -212,6 +238,10 @@ input {
 
 .item-icon-left.indent .icon {
 	left: 31px;
+}
+
+.item.item-image img {
+	padding: 16px;
 }
 
 body {

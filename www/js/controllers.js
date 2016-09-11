@@ -77,10 +77,20 @@ angular.module('starter.controllers', ['rzModule'])
 })
 
 .controller('HomeCtrl', function($scope, $http, $rootScope) {
+  $scope.home = {search:"", results:{}};
 
 	$http.get('http://markselectrical.co.uk/categories?api=').success(function(data) {
       $scope.categories = data.categories;
 	});
+
+  $scope.searchFunc = function(){
+    $http.get('http://markselectrical.co.uk/search?api=&keyword=' + $scope.home.search).success(function(data) {
+        $scope.home.results = data.items;
+        console.log($scope.home.results);
+        $scope.loading = false;
+    });
+    $scope.loading = true;
+  };
 
 })
 
@@ -135,60 +145,108 @@ angular.module('starter.controllers', ['rzModule'])
 
 })
 
-.controller('CategoryCtrl', function($scope, $stateParams, $http) {
-
-  $scope.price = {
-    maxPrice: 16998,
-    minPrice: 151,
-    upperRange: 10000,
-    lowerRange: 200
-  }
+.controller('CategoryCtrl', function($scope, $stateParams, $ionicPopup, $http) {
 
   var category = $stateParams.categoryName;
-  console.log($stateParams);
 
-  $scope.order = {"order":["price", "price", "rating"], "sort": "0"};
+  var pageNumber = 1;
+
+  $scope.products = [];
+
+  $scope.more = true;
+
+  var maxPrice = 0;
+
+  var minPrice = Infinity;
+
+  $scope.order = 'popular-order-asc';
+
+  $scope.orderChange = function(){
+    $scope.more = true;
+    pageNumber = 1;
+    $scope.products = [];
+    console.log('watch order' + $scope.order)
+    $scope.loadMore()    
+  };
+
+  $http.get('http://markselectrical.co.uk/' + category + '?api').success(function (data) {
+    
+    $scope.numberOfItems = data.meta.totalNumItems;
+
+    $scope.minRangeSlider = {
+        minValue: Math.floor(data.meta.pricemin),
+        maxValue: Math.ceil(data.meta.pricemax),
+        options: {
+            floor: Math.floor(data.meta.pricemin),
+            ceil: Math.ceil(data.meta.pricemax),
+            step: 1,
+            translate: function(price) {
+              return '£' + price;
+            }
+        }
+    };
+
+    $scope.loadMore = function() {
+
+      var url = 'http://markselectrical.co.uk/' + category + '-' + 'page-' + pageNumber + '-sort-' + $scope.order + '-' + 'show-12A' + '?api';
+
+      console.log(url);
+
+      if ($scope.products.length < $scope.numberOfItems) {
+
+          console.log("load more called");
+          
+          // Load the data from Marks Electrical api. 
+          $http.get(url).success(function (data) {
+            console.log(data);
+            angular.forEach(data.items, function (value, key) {
+
+              $scope.products.push(value);
+
+            });
+
+          })
+          
+          .error (function (data, status, headers) {
+            
+            // Disable infinite scroll since we've got an error.
+            $scope.more = false;        
+              
+              // Otherwise show general alert.
+              $ionicPopup.alert({
+                title: 'Sorry, there has been an error',
+                template: 'Please try again later.'
+              });
+
+          })
+          
+          .finally(function () {
+            
+            console.log('finally');
+            pageNumber++;
+            $scope.init = true;
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+
+          });
+
+      } else {
+
+        // Otherwise show general alert.
+        $ionicPopup.alert({
+          title: 'No More Products',
+          template: 'You reached the bottom of the list!'
+        });
+
+        $scope.more = false;
+      }
+
+    };
+
+  });
 
   $scope.location = function() {
     return $stateParams;
   }
-
-  $scope.price = {};
-
-  $http.get('http://markselectrical.co.uk/' + category + '?api').success(function(data) {
-
-      console.log(data);
-
-      $scope.products = data.items;
-
-      var minPrice = Infinity;
-      var maxPrice = 0;
-
-      for (var i = $scope.products.length - 1; i >= 0; i--) {
-        if ($scope.products[i].price > maxPrice) {
-          maxPrice = $scope.products[i].price;
-        };
-        if ($scope.products[i].price < minPrice) {
-          minPrice = $scope.products[i].price;
-        }
-      };
-
-      $scope.minRangeSlider = {
-          minValue: Math.floor(minPrice),
-          maxValue: Math.ceil(maxPrice),
-          options: {
-              floor: Math.floor(minPrice),
-              ceil: Math.ceil(maxPrice),
-              step: 1,
-              translate: function(value) {
-                return '£' + value;
-              }
-          }
-      };
-
-      $scope.init = true;
-
-  });
 
 })
 
@@ -231,8 +289,10 @@ angular.module('starter.controllers', ['rzModule'])
   }
 
   $http.get('http://markselectrical.co.uk/' + $scope.product.url + '?api').success(function(data) {
-      $scope.productData = data;
-      console.log(data)
+      $scope.productData = data[0].images;
+      document.getElementById('summary').innerHTML = data[0].summary;
+      document.getElementById('description').innerHTML = data[0].description;
+      $ionicSlideBoxDelegate.update();
   });
 
 });

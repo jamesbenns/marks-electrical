@@ -1,73 +1,40 @@
-<ion-view>
-    <ion-nav-bar class="bar-light">
-
-        <ion-nav-back-button class="button-icon ion-arrow-left-c">
-        </ion-nav-back-button>
-
-        <ion-nav-title>
-            <img class="title-image" src="img/logo.png" />
-        </ion-nav-title>
-
-        <ion-nav-buttons side="left">
-            <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-            </button>
-        </ion-nav-buttons>
-        <ion-nav-buttons side="right">
-            <button class="button button-icon button-clear ion-ios-cart" menu-toggle="right">
-            </button>
-        </ion-nav-buttons>
-
-    </ion-nav-bar>
-    <ion-content style="background: #0097ff">
-
-<div class="row responsive-sm padding">
-  <div class="col-50 col-offset-25">
-  <div class="category-item-container shadow" ng-repeat="category in categories track by $index" ng-style="{'background-image' : 'url( {{category.imageUrl}} )'}">
-    <div ng-click="setCategory(category.children, category.url)" class="category-item">
-      <h2>{{category.name}}</h2>
-    </div>
-  </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--             <div class="product-finder">
-                <span class="product-finder-title">
-                  Find the product for you
-                </span>
-                <div class="row">
-                    <div class="col category-box"><img src="./img/television.png" class="finder-icon"> Audio Visual
-                    </div>
-                    <div class="col category-box"><img src="./img/stove.png" class="finder-icon"> Cooking
-                    </div>
-                    <div class="col category-box"><img src="./img/fridge.png" class="finder-icon"> Refrigeration
-                    </div>
+<ion-view hide-back-button="true">
+    <ion-content style="background: #0097ff;">
+        <div class="search padding shadow">
+            <input type="text" placeholder="Search" ng-keyup="searchFunc()" ng-model="home.search"/>
+            <div ng-show="home.search">
+                <div style="text-align: center; color: #fff; padding-top: 10px;">
+                    <ion-spinner ng-if="loading && home.search.length > 1" class="spinner-light" icon="crescent"></ion-spinner>
+                    <div ng-if="home.results && !loading" >{{home.results.length}} results:</div>
+                    <div ng-if="!loading && !home.results && home.search.length > 1">Sorry, no results</div>
+                    <div ng-if="home.search.length < 2">Type two or more characters</div>
                 </div>
-                <div class="row">
-                    <div class="col category-box"><img src="./img/washing-machine.png" class="finder-icon"> Laundry
-                    </div>
-                    <div class="col category-box"><img src="./img/dishwasher.png" class="finder-icon"> Dishwashers
-                    </div>
-                    <div class="col category-box"><img src="./img/kettle.png" class="finder-icon"> Small Appliances
-                    </div>
+                <div ng-if="home.results">
+                     <div class="list" style="padding-top: 10px;">
+                        <a class="item item-thumbnail-left result" ng-click="setProduct(item)" ng-repeat="item in home.results">
+                           <img href="#app/product/{{item.id}}/{{item.name}}" ng-src="{{item.images[0]}}">
+                           <h2>{{item.name}}</h2>
+                           <p>£{{item.price}}, <span ng-show="item.stock" class="balanced">In stock!</span><span ng-hide="item.stock" class="assertive">Out of stock!</span></p>
+                        </a>
+                     </div>
+                     <div style="text-align: center; color: #fff; margin-top: -10px;" ng-click="home.search = ''">
+                        No more results<br>
+                        <i class="ion-close" style="font-size: 30px;"></i>
+                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
-
+        <div class="row responsive-sm padding">
+          <div class="col-50 col-offset-25">
+            <div ng-if="!categories" style="text-align: center; padding-top: 20px;">
+                <ion-spinner class="spinner-light" icon="crescent"></ion-spinner>
+            </div>
+          <div class="category-item-container shadow" ng-repeat="category in categories" ng-style="{'background-image' : 'url( {{category.imageUrl}} )'}">
+            <div ng-click="setCategory(category.children, category.url)" class="category-item">
+              <h2>{{category.name}}</h2>
+            </div>
+          </div>
+          </div>
+        </div>
     </ion-content>
 </ion-view>

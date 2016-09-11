@@ -3,8 +3,8 @@
   <div class="location-bar">{{product.name}}</div>
 
 	<ion-slide-box on-slide-changed="slideHasChanged($index)" class="product-slide-box">
-	  <ion-slide ng-repeat="image in product.images" class="product-slide">
-		<img ng-src="{{image}}" class="product-img" ng-class="{shrink: tab !== 1}">
+	  <ion-slide ng-repeat="image in productData" class="product-slide">
+  		<img ng-src="{{image}}" ng-init="show = true" class="product-img" ng-class="{shrink: tab !== 1}">
 	  </ion-slide>
 	</ion-slide-box>
 
@@ -29,7 +29,8 @@
   </div>
 
 <div class="list">
-
+<div id="summary"></div>
+<div id="description"></div>
   <div class="item item-divider">
     Inexpensive Excellence
   </div>
