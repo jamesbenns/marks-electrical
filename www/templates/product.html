@@ -1,5 +1,5 @@
 <ion-view>
-  <ion-content>
+  <ion-content class="product-page-margin">
   <div class="location-bar">{{product.name}}</div>
 
 	<ion-slide-box on-slide-changed="slideHasChanged($index)" class="product-slide-box">
@@ -10,44 +10,28 @@
 
 <div ng-show="tab == 1">
 	  <div class="item">
-    <div class="row no-padding">
-      <div class="col col-67 no-padding">
-<!--         <h2 class="text-overflow">{{product.name}}</h2>
- -->        <h2 style="margin-top: 4px;"><stars rating="3"></stars> (12)</h2>
-            <h2><span ng-show="product.stock" class="balanced">In stock!</span><span ng-hide="product.stock" class="assertive">Out of stock!</span></h2>
-      </div>
-      <div class="col col-33 no-padding" style="text-align: right;">
+    <div class="no-padding text-center">
         <h2 class="price">{{product.price | currency : '£'}}</h2>
+        <h2><span ng-show="product.stock" class="balanced"><i class="icon ion-checkmark"></i>In stock!</span><span ng-hide="product.stock" class="assertive"><i class="icon ion-close"></i>Out of stock!</span></h2>
+        <h2 style="margin-bottom: 16px;" ng-if="reviewData.length"><stars rating="rating"></stars>({{reviewData.length}})</h2>
         <h2 ng-show="product.saving" class="assertive">Save £50</h2>
-      </div>
     </div>
 
-  <button class="button button-block button-small button-dark add-to-cart" ng-click="addToCart(product)" ng-disabled="checkCart(product.id)">
+  <button class="button button-block button-balanced add-to-cart" ng-click="addToCart(product)" ng-disabled="checkCart(product.id)">
     <span ng-show="checkCart(product.id)"><i class="icon ion-checkmark"></i> Added to your Cart</span><span ng-hide="checkCart(product.id)">Add to Cart</span>
   </button>
 
   </div>
 
 <div class="list">
-<div id="summary"></div>
-<div id="description"></div>
-  <div class="item item-divider">
-    Inexpensive Excellence
-  </div>
-
-  <div class="item text" href="#">
-	<p>This item is In Stock at our warehouse and ready for immediate delivery.</p>
-
-<p>We’ll give you a 2 hour timeslot the evening before your delivery date, so you'll know what time we’ll be at your address. (Note: For evening/same day deliveries, you will receive your timeslot in the afternoon on the day of your delivery.)</p>
-  </div>
-  <div class="item item-divider">
-    Multi Channel Sound
-  </div>
-
-  <div class="item text" href="#">
-	<p>This item is In Stock at our warehouse and ready for immediate delivery.</p>
-
-<p>We usually offer next day delivery to most parts of England and Wales, and unlike many of our competitors we also offer free weekend deliveries.</p>
+<div class="item item-divider">
+  Summary
+</div>
+<div id="summary" ng-bind-html="summary"></div>
+<div class="item item-divider" ng-if="description">
+  Description
+</div>
+<div id="description" ng-if="description" ng-bind-html="description" class="item text-overflow"></div>
 
   </div>
 
@@ -63,8 +47,14 @@
     Reviews
   </div>
 
-  <div class="item text" href="#">
-	<p>Bla bla bla</p>
+  <div class="item text" href="#" ng-if="reviewData.length" ng-repeat="review in reviewData">
+  <p class="text-left"><stars rating="review.Rating"></stars></p>
+  <h2>{{review.UserNickname}}, {{review.UserLocation}} - <span am-time-ago="review.SubmissionTime | amParse:'YYYY-MM-DD HH:mm:ss'"></span></h2>
+	<p>{{review.ReviewText}}</p>
+  </div>
+
+  <div ng-if="!reviewData.length" class="item text text-center">
+    <h2>No Reviews</h2>
   </div>
 
 </div>

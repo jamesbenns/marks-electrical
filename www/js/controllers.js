@@ -81,6 +81,7 @@ angular.module('starter.controllers', ['rzModule'])
 
 	$http.get('http://markselectrical.co.uk/categories?api=').success(function(data) {
       $scope.categories = data.categories;
+      console.log(data.categories)
 	});
 
   $scope.searchFunc = function(){
@@ -263,7 +264,7 @@ angular.module('starter.controllers', ['rzModule'])
   console.log(toString);
   $scope.product = JSON.parse(toString);
   console.log($scope.product);
-  $ionicSlideBoxDelegate.update()
+  $ionicSlideBoxDelegate.update();
 
   $scope.addToCart = function(product) {
     var addFields = product;
@@ -271,8 +272,10 @@ angular.module('starter.controllers', ['rzModule'])
     addFields.index = $rootScope.inCart.length;
     shoppingCart.addToCart(addFields);
     $ionicSideMenuDelegate.toggleRight();
-    $scope.$digest
+    $scope.$digest;
   }
+
+
 
   $scope.checkCart = function(productId) {
     for (var i = 0; i < $rootScope.inCart.length ; i++) {
@@ -289,10 +292,19 @@ angular.module('starter.controllers', ['rzModule'])
   }
 
   $http.get('http://markselectrical.co.uk/' + $scope.product.url + '?api').success(function(data) {
+     
       $scope.productData = data[0].images;
-      document.getElementById('summary').innerHTML = data[0].summary;
-      document.getElementById('description').innerHTML = data[0].description;
+      $scope.summary = data[0].summary;
+      $scope.description = data[0].description;
       $ionicSlideBoxDelegate.update();
+      $scope.productId = data[0].url.split('_')[0];
+
+      $http.get('http://api.bazaarvoice.com/data/reviews.json?apiversion=5.4&passkey=caGNjXYwRCUrhX5c9VuHRgl7vgc4GPmGZYWqgxvKUxtPA&Filter=ProductId:' + $scope.productId + '&Sort=SubmissionTime:desc&Include=Products&Stats=Reviews&Limit=10').success(function(data) {
+          $scope.reviewData = data.Results;
+          $scope.rating = data.Includes.Products[$scope.productId].ReviewStatistics.AverageOverallRating
+          console.log($scope.reviewData);
+      });
+
   });
 
 });

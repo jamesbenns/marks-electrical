@@ -1,7 +1,7 @@
 <ion-view hide-back-button="true">
     <ion-content style="background: #0097ff;">
         <div class="search padding shadow">
-            <input type="text" placeholder="Search" ng-keyup="searchFunc()" ng-model="home.search"/>
+            <input type="text" placeholder="Product Search" ng-keyup="searchFunc()" ng-model="home.search"/>
             <div ng-show="home.search">
                 <div style="text-align: center; color: #fff; padding-top: 10px;">
                     <ion-spinner ng-if="loading && home.search.length > 1" class="spinner-light" icon="crescent"></ion-spinner>

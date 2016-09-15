@@ -32,6 +32,10 @@
 	color: #0097ff;
 }
 
+.product-page-margin {
+	margin-bottom: 49px;
+}
+
 .tab-item .icon {
 	height: 25px;
 	font-size: 25px;
@@ -48,7 +52,7 @@
 	min-height: 34px;
 	width: 100%;
 	color: #fff;
-	padding: 5px;
+	padding: 10px;
 	line-height: 24px;
 	font-size: 12px;
 	text-align: center;
@@ -116,12 +120,8 @@ stars i {
 .product-slide-box {
 	background: #fff; 
 	padding-top: 20px; 
-	padding-bottom: 20px; 
+	padding-bottom: 45px; 
 	text-align: center;
-}
-
-.bar .title {
-	font-weight: 100;
 }
 
 .product-finder-title {
@@ -137,10 +137,30 @@ stars i {
 	font-weight: 100;
 }
 
-.text-overflow {
-	text-overflow: clip !important;
-	white-space: normal !important;
+.bar-footer .title {
+    height: 49px;
+    line-height: 49px;
 }
+
+.text-overflow, #summary > .list > .item, .list h2, .list h3 {
+	text-overflow: clip;
+	white-space: normal;
+}
+
+.bar-footer {
+	height: 49px;
+}
+
+.text-ellipsis h2 {
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+}
+
+#description > ul {
+	list-style: disc;
+	padding-left: 25px;
+}
+
 input {
 	background-color: transparent;
 }
@@ -207,6 +227,7 @@ input {
 .product-img {
 	width: 100%;
 	transition: all 1s;
+	max-width: 400px;
 }
 
 .shrink {

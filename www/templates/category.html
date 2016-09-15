@@ -23,6 +23,8 @@
       </select>
     </label>
   </div>
+<div class="row responsive-sm padding">
+<div class="col-50 col-offset-25">
 <ion-list>
 	<div class="list card" ng-repeat="product in products" ng-show="product.price >= minRangeSlider.minValue && product.price <= minRangeSlider.maxValue">
 
@@ -30,14 +32,16 @@
 	<img ng-src="{{product.images[0]}}"/>
 	  </div>
 
-	  <div class="item" ng-click="setProduct(product)">
+	  <div class="item text-center" ng-click="setProduct(product)">
 	  	<h2 class="text-overflow">{{product.name}}</h2>
-	    <p>£{{product.price}}, <span ng-show="product.saving" class="assertive">saving £{{product.saving}}!</span> <span ng-show="product.stock" class="balanced">In stock!</span><span ng-hide="product.stock" class="assertive">Out of stock!</span></p>
-      <stars rating="3"></stars>
+	    <h2 class="price">£{{product.price}}</h2><p><stars rating="3"></stars></p><p>
+<span ng-show="product.stock" class="balanced"><i class="icon ion-checkmark"></i>In stock</span><span ng-hide="product.stock" class="assertive"><i class="icon ion-close"></i>Out of stock</span></p>
 	  </div>
 
 	</div>
 </ion-list>
+</div>
+</div>
 
   <ion-infinite-scroll ng-if="loadMore && more" on-infinite="loadMore()" spinner="crescent"></ion-infinite-scroll>
 

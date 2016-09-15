@@ -20,31 +20,17 @@
    </ion-side-menu-content>
    <ion-side-menu side="left" is-enabled="isEnabled()">
       <ion-header-bar class="bar-dark" title="Cart">
-         <h1 class="title">Browse Categories</h1>
+         <h1 class="title">Menu</h1>
       </ion-header-bar>
       <ion-content ng-controller="MenuCtrl" style="background: #eee;">
          <ion-list>
-            <ion-item menu-close class="item-icon-left" href="#/">
-               <i class="icon ion-ios-home"></i>
-               Home
-            </ion-item>
-            <ion-item class="item-icon-left" ng-click="toggle()">
-               <i class="icon ion-chevron-right" ng-hide="showCategories"></i><i class="icon ion-chevron-down" ng-show="showCategories"></i>
-               Product Categories
-            </ion-item>
-            <div ng-show="showCategories" ng-repeat="category in categories">
-               <ion-item class="item-icon-left" ng-click="toggle2(category.id)">
-                  <i class="icon ion-chevron-down icon-small" ng-show="show[category.id]"></i><i class="icon ion-chevron-right icon-small" ng-hide="show[category.id]"></i>
-                  {{category.name}}
-               </ion-item>
-               <ion-item menu-close class="item-icon-left indent" href="#/app/category/{{category.name}}/{{subcategory.name}}" ng-show="show[category.id]" ng-repeat="subcategory in category.children">
-                  <i class="icon ion-minus icon-small"></i>
-                  {{subcategory.name}}
-               </ion-item>
-            </div>
             <ion-item menu-close class="item-icon-left" href="#/app/browse">
                <i class="icon ion-ios-telephone"></i>
                Contact
+            </ion-item>
+            <ion-item class="item-icon-left" ng-click="login()">
+               <i class="icon ion-locked"></i>
+               Log in
             </ion-item>
          </ion-list>
       </ion-content>
@@ -55,14 +41,14 @@
       </ion-header-bar>
       <ion-content ng-controller="MenuCtrl">
          <div class="list">
-            <a class="item item-thumbnail-left" ng-repeat="item in inCart track by $index">
+            <a class="item item-thumbnail-left text-ellipsis" ng-repeat="item in inCart track by $index">
                <img href="#app/product/{{item.id}}/{{item.name}}" ng-src="{{item.images[0]}}">
                <h2>{{item.name}}</h2>
-               <p>Quantity: {{item.quantity}} <i class="icon ion-plus-round plus-minus" ng-click="changeQuantity('up', item.index)"></i> <i class="icon ion-minus-round plus-minus" ng-click="changeQuantity('down', item.index)"></i></p>
                <p>£{{item.price}}</p>
-               <button class="button button-small button-outline button-assertive" ng-click="removeItem(item.index)">
-               remove
-               </button>
+               <p>Quantity: {{item.quantity}}</p>
+               <button class="button button-small button-icon icon ion-plus-round" ng-click="changeQuantity('up', item.index)"></button>
+               <button class="button button-small button-icon icon ion-minus-round" ng-click="changeQuantity('down', item.index)"></button>
+               <button class="button button-icon button-small icon ion-close-circled assertive" ng-click="removeItem(item.index)"></button>
             </a>
          </div>
          <div ng-hide="inCart.length">

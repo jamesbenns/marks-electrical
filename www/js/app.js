@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'angularMoment'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -35,19 +35,27 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 }])
 
 .directive('stars', function() {
-  return {
-    restrict: 'E',
-    scope: {
-      customerInfo: '=rating'
-    },
-    template: function(elem, attr) {
-      var fullStars = Math.round(attr.rating);
-      var emptyStars = 5 - fullStars;
-      var fullIcon = '<i class="icon ion-ios-star"></i>';
-      var emptyIcon = '<i class="icon ion-ios-star grey"></i>';
-      return fullIcon.repeat(fullStars) + emptyIcon.repeat(emptyStars);
-    }
-  };
+    return {
+        restrict: 'E',
+        scope: {
+            rating: '=',
+            type: '='
+        },
+        link: function(scope, elem, attr) {
+
+            scope.$watch('rating', function(){
+
+                var fullStars = Math.round(scope.rating);
+                var emptyStars = 5 - fullStars;
+                var fullIcon = '<i class="icon ion-ios-star"></i>';
+                var emptyIcon = '<i class="icon ion-ios-star grey"></i>';
+                var templateString = fullIcon.repeat(fullStars) + emptyIcon.repeat(emptyStars);
+                elem.html(templateString);
+
+            });
+            
+        }
+    };
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
