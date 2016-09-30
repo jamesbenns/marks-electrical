@@ -26,10 +26,88 @@ angular.module('starter', ['ionic', 'starter.controllers', 'angularMoment'])
   return {
     addToCart: function( product ){
           $rootScope.inCart.push(product);
+          console.log($rootScope.inCart);
           return true;
     },
     removeFromCart: function( index ){
-              $rootScope.inCart.splice(index, 1);
+          $rootScope.inCart.splice(index, 1);
+    },
+    checkoutCart: function(){
+      var line = [];
+      var id = 0;
+
+      for (i = 0; i < $rootScope.inCart.length; i++) { 
+          var object = {"type": "item"};
+          object.id = id;
+          object.qty = $rootScope.inCart[i].quantity;
+          object.total = $rootScope.inCart[i].price;
+          object.price = $rootScope.inCart[i].quantity * $rootScope.inCart[i].price;
+          object.item = {};
+          object.item.name = $rootScope.inCart[i].name;
+          object.item.sku = $rootScope.inCart[i].url.split('_')[0];
+          object.item.price = $rootScope.inCart[i].price;
+          object.item.image = $rootScope.inCart[i].images[0];
+          object.item.url = $rootScope.inCart[i].url + ".html";
+          object.addons = {
+                            "warranty": {
+                              "item": {
+                                "sku": "5YRE23DW2",
+                                "name": "5YRE23DW2 5 Year warranty 2+3 year Dishwasher",
+                                "price": "124.37",
+                                "url": "http://new.markselectrical.co.uk:8081/5YRE23DW2_5-Year-warranty-2%252B3-year-Dishwasher.html",
+                                "image": "https://s3-eu-west-1.amazonaws.com/media.markselectrical.co.uk/item-images/bigthumb/_notfound.png"
+                              }
+                            },
+                            "service": [
+                              {
+                                "item": {
+                                  "sku": "OLDPRODCOL",
+                                  "name": "Recycle Product Recycle Product",
+                                  "price": "14.99",
+                                  "url": "http://new.markselectrical.co.uk:8081/OLDPRODCOL_Recycle-Product.html",
+                                  "image": "https://s3-eu-west-1.amazonaws.com/media.markselectrical.co.uk/item-images/bigthumb/_notfound.png"
+                                }
+                              },
+                              {
+                                "item": {
+                                  "sku": "UNWRAP",
+                                  "name": "Unbranded Recycle Packaging Recycle Packaging",
+                                  "price": "4.99",
+                                  "url": "http://new.markselectrical.co.uk:8081/UNWRAP_Unbranded-Recycle-Packaging.html",
+                                  "image": "https://s3-eu-west-1.amazonaws.com/media.markselectrical.co.uk/item-images/bigthumb/_notfound.png"
+                                },
+                                "added": "1"
+                              }
+                            ]
+                          };
+            line.push(object);
+          id++
+      };
+
+      var cartObject = {
+                          "basket": {
+                            "summary": {
+                              "num": $rootScope.inCart.length,
+                              "total": (function() {
+                                                      var total = 0;
+                                                      for (var i = 0; i < $rootScope.inCart.length ; i++) {
+                                                          total += $rootScope.inCart[i].price * $rootScope.inCart[i].quantity
+                                                      }
+                                                      return total;
+                                                    })()
+                            },
+                            "finance": {
+                              "minimum": "278",
+                              "available": "1",
+                              "product": "Classic Credit 36 Months 15.9%",
+                              "repayment": "86.39"
+                            },
+                            "lines": {
+                              "line": line
+                            }
+                          }
+                        }
+        $rootScope.cartObj = cartObject;
         }
     }
 }])
@@ -58,6 +136,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'angularMoment'])
     };
 })
 
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
@@ -66,6 +145,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'angularMoment'])
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
+  })
+
+  .state('app.track', {
+    url: '/track',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/search.html',
+        controller: 'TrackCtrl'
+      }
+    }
   })
 
   .state('app.search', {
@@ -81,7 +170,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'angularMoment'])
       url: '/browse',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/browse.html',
+          controller: 'ContactCtrl'
         }
       }
     })

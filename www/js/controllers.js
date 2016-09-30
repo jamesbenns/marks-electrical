@@ -39,7 +39,6 @@ angular.module('starter.controllers', ['rzModule'])
       $window.scrollTo(0,0)
 
     } if (!object) {
-      console.log(url);
       $state.go('app.category', { 'categoryName': url });
 
     }
@@ -57,7 +56,7 @@ angular.module('starter.controllers', ['rzModule'])
 
 
   $scope.isEnabled = function() {
-    if ($state.current.name == "app.home") {
+    if ($state.current.name == "app.home" || $state.current.name == "app.browse" || $state.current.name == "app.track") {
       return true
     } else {
       return false
@@ -76,18 +75,30 @@ angular.module('starter.controllers', ['rzModule'])
   };
 })
 
-.controller('HomeCtrl', function($scope, $http, $rootScope) {
+.controller('HomeCtrl', function($scope, $http, $rootScope, $window) {
   $scope.home = {search:"", results:{}};
 
-	$http.get('http://markselectrical.co.uk/categories?api=').success(function(data) {
+  $http.get('http://markselectrical.co.uk/categories?api=').success(function(data) {
       $scope.categories = data.categories;
-      console.log(data.categories)
-	});
+  });
+
+  $scope.promoClick = function(type, url){
+    if(type == "page"){
+      var URL = "http://markselectrical.co.uk/" + url;
+      window.open(URL, "_blank", "location=no")
+    }
+    if (type == "category") {
+      window.alert("category")
+    };
+  }
+
+  $http.get('http://markselectrical.co.uk/?api=').success(function(data) {
+      $rootScope.promotions = data.promotions;
+  });
 
   $scope.searchFunc = function(){
     $http.get('http://markselectrical.co.uk/search?api=&keyword=' + $scope.home.search).success(function(data) {
         $scope.home.results = data.items;
-        console.log($scope.home.results);
         $scope.loading = false;
     });
     $scope.loading = true;
@@ -95,9 +106,89 @@ angular.module('starter.controllers', ['rzModule'])
 
 })
 
-.controller('MenuCtrl', function($scope, $http, $state, $rootScope, shoppingCart) {
+
+.controller('TrackCtrl', function($scope, $http, $rootScope) {
+
+  $scope.order = {};
+
+  $scope.go = function(){
+    $http.get('http://services.markselectrical.co.uk/services/remote/getorder?orderno=' + $scope.order.no).success(function(data) {
+       $scope.orderDetails = data;
+    });
+  }
+
+})
+
+.controller('ContactCtrl', function($scope, $ionicHistory, $compile) {
+
+      var map;
+      (function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 52.6518702, lng: -1.1788397},
+          zoom: 12
+        });
+
+        //Marker + infowindow + angularjs compiled ng-click
+        var contentString1 = "<div><b>Our Showroom</b><br>LE3 5QG</div>";
+        var compiled1 = $compile(contentString1)($scope);
+
+        var infowindow1 = new google.maps.InfoWindow({
+          content: compiled1[0]
+        });
+
+        var contentString2 = "<div><b>Head Office<br>Click&Collect</b><br>LE3 1TU</div>";
+        var compiled2 = $compile(contentString2)($scope);
+
+        var infowindow2 = new google.maps.InfoWindow({
+          content: compiled2[0]
+        });
+
+        var showroom = new google.maps.Marker({
+          position: {lat: 52.6343498, lng: -1.1504682},
+          map: map,
+          title: 'Uluru (Ayers Rock)'
+        });
+
+        google.maps.event.addListener(showroom, 'click', function() {
+          infowindow1.open(map,showroom);
+        });
+
+        var office = new google.maps.Marker({
+          position: {lat: 52.6327138, lng: -1.210706},
+          map: map,
+          title: 'Uluru (Ayers Rock)'
+        });
+
+        google.maps.event.addListener(office, 'click', function() {
+          infowindow2.open(map,office);
+        });
+
+        infowindow1.open(map,showroom);
+        infowindow2.open(map,office);
+
+      }())
+
+})
+
+.controller('MenuCtrl', function($scope, $http, $state, $rootScope, shoppingCart, $ionicModal) {
 
   $rootScope.inCart = [];
+
+  $ionicModal.fromTemplateUrl('templates/checkout.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.checkoutModal = modal;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closeCheckoutModal = function() {
+    $scope.checkoutModal.hide();
+  };
+
+  $scope.checkout = function(){
+    shoppingCart.checkoutCart();
+    $scope.checkoutModal.show();
+  };
 
   $scope.changeQuantity = function(direction, index) {
     if (direction == "up") {
@@ -160,13 +251,14 @@ angular.module('starter.controllers', ['rzModule'])
 
   var minPrice = Infinity;
 
-  $scope.order = 'popular-order-asc';
+  $scope.list = {};
+
+  $scope.list.order = 'popular-order-asc';
 
   $scope.orderChange = function(){
     $scope.more = true;
     pageNumber = 1;
     $scope.products = [];
-    console.log('watch order' + $scope.order)
     $scope.loadMore()    
   };
 
@@ -189,18 +281,27 @@ angular.module('starter.controllers', ['rzModule'])
 
     $scope.loadMore = function() {
 
-      var url = 'http://markselectrical.co.uk/' + category + '-' + 'page-' + pageNumber + '-sort-' + $scope.order + '-' + 'show-12A' + '?api';
-
+      var url = 'http://markselectrical.co.uk/' + category + '-' + 'page-' + pageNumber + '-sort-' + $scope.list.order + '-' + 'show-12A' + '?api';
+  
       console.log(url);
+      console.log($scope.order);
 
       if ($scope.products.length < $scope.numberOfItems) {
 
-          console.log("load more called");
           
           // Load the data from Marks Electrical api. 
           $http.get(url).success(function (data) {
-            console.log(data);
             angular.forEach(data.items, function (value, key) {
+
+              $http.get("http://api.bazaarvoice.com/data/statistics.json?apiversion=5.4&passkey=caGNjXYwRCUrhX5c9VuHRgl7vgc4GPmGZYWqgxvKUxtPA&filter=productid:" + value.url.split('_')[0] +"&stats=Reviews,NativeReviews").success(function (data) {
+                if (data.TotalResults) {
+                
+                value.rating = data.Results[0].ProductStatistics.ReviewStatistics.AverageOverallRating;
+                value.numberOfReviews = data.Results[0].ProductStatistics.ReviewStatistics.TotalReviewCount;
+
+                };
+
+              })
 
               $scope.products.push(value);
 
@@ -223,7 +324,6 @@ angular.module('starter.controllers', ['rzModule'])
           
           .finally(function () {
             
-            console.log('finally');
             pageNumber++;
             $scope.init = true;
             $scope.$broadcast('scroll.infiniteScrollComplete');
@@ -232,13 +332,8 @@ angular.module('starter.controllers', ['rzModule'])
 
       } else {
 
-        // Otherwise show general alert.
-        $ionicPopup.alert({
-          title: 'No More Products',
-          template: 'You reached the bottom of the list!'
-        });
-
         $scope.more = false;
+        
       }
 
     };
@@ -261,7 +356,6 @@ angular.module('starter.controllers', ['rzModule'])
 .controller('ProductCtrl', function($scope, $stateParams, $http, shoppingCart, $ionicSideMenuDelegate, $ionicSlideBoxDelegate, $rootScope) {
 
   var toString = atob($stateParams.product);
-  console.log(toString);
   $scope.product = JSON.parse(toString);
   console.log($scope.product);
   $ionicSlideBoxDelegate.update();
@@ -292,8 +386,7 @@ angular.module('starter.controllers', ['rzModule'])
   }
 
   $http.get('http://markselectrical.co.uk/' + $scope.product.url + '?api').success(function(data) {
-     
-      $scope.productData = data[0].images;
+      $scope.productData = data[0].images.slice(1,6);
       $scope.summary = data[0].summary;
       $scope.description = data[0].description;
       $ionicSlideBoxDelegate.update();
@@ -302,7 +395,6 @@ angular.module('starter.controllers', ['rzModule'])
       $http.get('http://api.bazaarvoice.com/data/reviews.json?apiversion=5.4&passkey=caGNjXYwRCUrhX5c9VuHRgl7vgc4GPmGZYWqgxvKUxtPA&Filter=ProductId:' + $scope.productId + '&Sort=SubmissionTime:desc&Include=Products&Stats=Reviews&Limit=10').success(function(data) {
           $scope.reviewData = data.Results;
           $scope.rating = data.Includes.Products[$scope.productId].ReviewStatistics.AverageOverallRating
-          console.log($scope.reviewData);
       });
 
   });

@@ -5,6 +5,7 @@
         <div class="category-item-container shadow" ng-repeat="category in categories" ng-style="{'background-image' : 'url( {{category.imageUrl}} )'}">
           <div ng-click="setCategory(category.children, category.url)" class="category-item">
             <h2>{{category.name}}</h2>
+            <p>view products <i class="icon ion-chevron-right"></i></p>
           </div>
         </div>
       </div>

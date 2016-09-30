@@ -24,22 +24,30 @@
       </ion-header-bar>
       <ion-content ng-controller="MenuCtrl" style="background: #eee;">
          <ion-list>
+            <ion-item menu-close class="item-icon-left" href="#/app/home">
+               <i class="icon ion-home"></i>
+               Home
+            </ion-item>
             <ion-item menu-close class="item-icon-left" href="#/app/browse">
                <i class="icon ion-ios-telephone"></i>
                Contact
             </ion-item>
+            <ion-item menu-close href="#/app/track" class="item-icon-left">
+               <i class="icon ion-android-locate"></i>
+               Track Order
+            </ion-item>
             <ion-item class="item-icon-left" ng-click="login()">
                <i class="icon ion-locked"></i>
-               Log in
+               Trade Login
             </ion-item>
          </ion-list>
       </ion-content>
    </ion-side-menu>
-   <ion-side-menu side="right" style="background: #eee;">
+   <ion-side-menu ng-controller="MenuCtrl" side="right" style="background: #eee;">
       <ion-header-bar class="bar-dark" title="Cart">
          <h1 class="title">Shopping Trolley</h1>
       </ion-header-bar>
-      <ion-content ng-controller="MenuCtrl">
+      <ion-content>
          <div class="list">
             <a class="item item-thumbnail-left text-ellipsis" ng-repeat="item in inCart track by $index">
                <img href="#app/product/{{item.id}}/{{item.name}}" ng-src="{{item.images[0]}}">
@@ -55,11 +63,11 @@
             <h1 style="text-align: center; color: #ccc;">Cart empty!</h1>
          </div>
          <div class="padding" ng-show="inCart.length">
-            Total: {{cartTotal() | currency : '£'}}
+            {{cartObj}}
          </div>
       </ion-content>
-      <div style="z-index: 9999;" ng-show="inCart.length" class="bar bar-footer bar-balanced">
-         <div class="title">Checkout</div>
+      <div style="z-index: 9999;" ng-show="inCart.length" ng-click="checkout()" class="bar bar-footer button-me">
+         <div class="title">Checkout: {{cartTotal() | currency : '£'}}</div>
       </div>
    </ion-side-menu>
 </ion-side-menus>

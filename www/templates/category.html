@@ -1,10 +1,8 @@
 <ion-view>
 
-  <ion-content>
+  <ion-content style="background: #0097ff">
 
-  <div class="location-bar">{{location().categoryName}} <i class="icon ion-ios-arrow-right"></i> {{location().subCategoryName}} ({{numberOfItems}})</div>
-
-  <div class="shadow">
+<!--   <div class="shadow">
 
     <div class="item small-padding">
      
@@ -13,37 +11,53 @@
     </div>
 
     <label class="item sort item-input item-select">
-      <div class="input-label sort">
-        Sort Products
-      </div>
       <select ng-model="$parent.order" class="sort" ng-change="orderChange()">
         <option value="popular-order-asc">Popularity</option>
         <option value="price-order-asc">Price low to high</option>
         <option value="price-order-desc">Price high to low</option>
       </select>
     </label>
-  </div>
+  </div> -->
 <div class="row responsive-sm padding">
 <div class="col-50 col-offset-25">
-<ion-list>
-	<div class="list card" ng-repeat="product in products" ng-show="product.price >= minRangeSlider.minValue && product.price <= minRangeSlider.maxValue">
 
-	  <div class="item item-image">
-	<img ng-src="{{product.images[0]}}"/>
+<ion-list>
+<div style="border-radius: 5px; overflow: hidden; margin-top: 10px;">
+
+  <div class="item item-divider text-center">
+    {{location().categoryName}} <i class="icon ion-ios-arrow-right"></i> {{location().subCategoryName}} ({{numberOfItems}})
+  </div>
+  <div class="item">     
+    <rzslider ng-if="init" rz-slider-model="minRangeSlider.minValue" rz-slider-high="minRangeSlider.maxValue" rz-slider-options="minRangeSlider.options"></rzslider>
+  </div>
+  <ion-radio ng-model="list.order" ng-value="'popular-order-asc'" ng-change="orderChange()">Popularity</ion-radio>
+  <ion-radio ng-model="list.order" ng-value="'price-order-desc'" ng-change="orderChange()">Price High to Low</ion-radio>
+  <ion-radio ng-model="list.order" ng-value="'price-order-asc'" ng-change="orderChange()">Price Low to High</ion-radio>
+</div>
+
+            <div ng-if="spin" style="text-align: center; padding-top: 20px;">
+                <ion-spinner class="spinner-light" icon="crescent"></ion-spinner>
+            </div>
+
+  <div class="list card product-card" ng-repeat="product in products" ng-if="product.price >= minRangeSlider.minValue && product.price <= minRangeSlider.maxValue">
+
+	  <div class="item category-product-img item-image">
+      <ion-spinner icon="crescent" class="text-center" style="position: absolute; top: 70px; width: 100%; z-index: -1; left: 0px;"></ion-spinner>
+	     <img ng-src="{{product.images[0]}}"/>
 	  </div>
 
-	  <div class="item text-center" ng-click="setProduct(product)">
-	  	<h2 class="text-overflow">{{product.name}}</h2>
-	    <h2 class="price">£{{product.price}}</h2><p><stars rating="3"></stars></p><p>
-<span ng-show="product.stock" class="balanced"><i class="icon ion-checkmark"></i>In stock</span><span ng-hide="product.stock" class="assertive"><i class="icon ion-close"></i>Out of stock</span></p>
+	  <div style="padding: 16px;" ng-click="setProduct(product)">
+	  	<h4 class="text-overflow">{{product.name}}</h4>
+	    <h4>£{{product.price}}  <span ng-show="product.stock" class="balanced"><i class="icon ion-checkmark"></i>In stock</span><span ng-hide="product.stock" class="assertive"><i class="icon ion-close"></i>Out of stock</span></h4><div ng-if="product.rating"><stars rating="product.rating"></stars> ({{product.numberOfReviews}})</div>
 	  </div>
 
 	</div>
+  <h4 class="text-center" style="color: #fff;" ng-hide="more">No More Products</h4>
 </ion-list>
 </div>
 </div>
 
-  <ion-infinite-scroll ng-if="loadMore && more" on-infinite="loadMore()" spinner="crescent"></ion-infinite-scroll>
+  <ion-infinite-scroll ng-if="loadMore && more" on-infinite="loadMore()" class="spinner-light" spinner="crescent"></ion-infinite-scroll>
 
   </ion-content>
 

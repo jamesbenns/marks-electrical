@@ -1,0 +1,38 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-dark">
+    <h1 class="title">Checkout</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeCheckoutModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+<div class="list">
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Address line 1</span>
+    <input type="text" placeholder="Address line 1">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Address line 2</span>
+    <input type="text" placeholder="Address line 2">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">City</span>
+    <input type="text" placeholder="City">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Postcode</span>
+    <input type="text" placeholder="Postcode">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Email</span>
+    <input type="text" placeholder="Email">
+  </label>
+</div>
+<div class="padding-16">
+<button class="button button-block button-me add-to-cart" ng-click="addToCart(product)" ng-disabled="checkCart(product.id)">
+  Continue
+</button>
+</div>
+{{cartObj}}
+  </ion-content>
+</ion-modal-view>
