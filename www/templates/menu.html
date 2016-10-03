@@ -53,12 +53,20 @@
                <img href="#app/product/{{item.id}}/{{item.name}}" ng-src="{{item.images[0]}}">
                <h2>{{item.name}}</h2>
                <p>£{{item.price}}</p>
-               <p>Quantity: {{item.quantity}}</p>
-               <button class="button button-small button-icon icon ion-plus-round" ng-click="changeQuantity('up', item.index)"></button>
-               <button class="button button-small button-icon icon ion-minus-round" ng-click="changeQuantity('down', item.index)"></button>
-               <button class="button button-icon button-small icon ion-close-circled assertive" ng-click="removeItem(item.index)"></button>
+               
+               <div class="button-bar">
+                  <button class="button icon icon ion-minus-round button-small" ng-click="changeQuantity('down', item.index)"></button>
+                  <div class="quantity">{{item.quantity}}</div>
+                  <button class="button icon icon ion-plus-round button-small" ng-click="changeQuantity('up', item.index)"></button>
+                  <button class="button icon icon ion-close button-assertive button-small" ng-click="removeItem(item.index)"></button>
+               </div>
+               {{item.warranties}}
             </a>
          </div>
+
+
+
+
          <div ng-hide="inCart.length">
             <h1 style="text-align: center; color: #ccc;">Cart empty!</h1>
          </div>
