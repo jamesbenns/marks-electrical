@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['rzModule'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $location, $window, $state) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $location, $window, $state, $rootScope, $ionicSlideBoxDelegate, shoppingCart, $ionicSideMenuDelegate) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -8,6 +8,8 @@ angular.module('starter.controllers', ['rzModule'])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+  $rootScope.line = [];
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -18,6 +20,68 @@ angular.module('starter.controllers', ['rzModule'])
   }).then(function(modal) {
     $scope.modal = modal;
   });
+
+
+  $rootScope.checkout = {
+                           "checkout": {
+                              "customer": {
+                                 "id": "",
+                                 "billing": {
+                                    "title": "",
+                                    "firstName": "",
+                                    "lastName": "",
+                                    "email": "",
+                                    "phone": "",
+                                    "mobile": "",
+                                    "company-name": "",
+                                    "street": "",
+                                    "city": "",
+                                    "county": "",
+                                    "postcode": ""
+                                 },
+                                 "delivery": {
+                                    "title": "",
+                                    "first-name": "",
+                                    "last-name": "",
+                                    "email": "",
+                                    "phone": "",
+                                    "mobile": "",
+                                    "company-name": "",
+                                    "street": "",
+                                    "city": "",
+                                    "county": "",
+                                    "postcode": ""
+                                 },
+                                 "marketing-consent": "",
+                                 "trade-customer": ""
+                              },
+                              "delivery": {
+                                 "type": "",
+                                 "date": "",
+                                 "run": "",
+                                 "notes": ""
+                              },
+                              "basket": {
+                                 "summary": {
+                                    "num": "1",
+                                    "total": "443.23"
+                                 },
+                                 "lines": {
+                                    "line": []
+                                 },
+                                 "promos": {
+                                    "code": "",
+                                    "amount": ""
+                                 }
+                              }
+                           }
+                        };
+
+  $scope.addToCart = function(product) {
+    shoppingCart.addToCart(product);
+    $ionicSideMenuDelegate.toggleRight(true);
+    $scope.$digest;
+  }
 
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
@@ -39,18 +103,49 @@ angular.module('starter.controllers', ['rzModule'])
       $window.scrollTo(0,0)
 
     } if (!object) {
+
       $state.go('app.category', { 'categoryName': url });
 
     }
 
   };
 
+  $scope.recentProducts = [];
+
+  function notInRecentYet(obj, list) {
+      var i;
+      for (i = 0; i < list.length; i++) {
+          if (list[i].name === obj.name) {
+              console.log("already in recent prods");
+              return false;
+          }
+      }
+      return true;
+  }
+
   $scope.setProduct = function (object) {
 
-      var jsonString = JSON.stringify(object);
-      var base64 = btoa(jsonString);
-      $state.go('app.product', { 'product': base64 });
-      $window.scrollTo(0,0)
+    // Check if request came from cart or category
+    if (!object.images) {
+
+      $scope.currentProduct.images = [object.img]
+
+    }
+
+    $scope.currentProduct = object;
+
+    // Add to recentProducts if not already there
+    if (notInRecentYet(object, $scope.recentProducts)) {
+      
+      $scope.recentProducts.unshift(object);
+      $scope.recentProducts = $scope.recentProducts.slice(0,5);
+      $ionicSlideBoxDelegate.update()
+    
+    }
+
+    // Go to product page and close menu
+    $state.go('app.product');
+    $ionicSideMenuDelegate.toggleRight(false);
 
   };
 
@@ -73,9 +168,11 @@ angular.module('starter.controllers', ['rzModule'])
       $scope.closeLogin();
     }, 1000);
   };
+
 })
 
 .controller('HomeCtrl', function($scope, $http, $rootScope, $window) {
+ 
   $scope.home = {search:"", results:{}};
 
   $http.get('http://markselectrical.co.uk/categories?api=').success(function(data) {
@@ -90,7 +187,7 @@ angular.module('starter.controllers', ['rzModule'])
     if (type == "category") {
       window.alert("category")
     };
-  }
+  };
 
   $http.get('http://markselectrical.co.uk/?api=').success(function(data) {
       $rootScope.promotions = data.promotions;
@@ -105,7 +202,6 @@ angular.module('starter.controllers', ['rzModule'])
   };
 
 })
-
 
 .controller('TrackCtrl', function($scope, $http, $rootScope) {
 
@@ -170,9 +266,16 @@ angular.module('starter.controllers', ['rzModule'])
 
 })
 
-.controller('MenuCtrl', function($scope, $http, $state, $rootScope, shoppingCart, $ionicModal) {
+.controller('MenuCtrl', function($scope, $http, $state, $rootScope, shoppingCart, $ionicModal, $ionicPopup) {
 
-  $rootScope.inCart = [];
+  $scope.customer = {};
+
+  $scope.moreInfo = function(heading, price) {
+   var alertPopup = $ionicPopup.alert({
+     title: heading,
+     template: "All appliances come with a warranty, but they can run out after as little as a year. By extending your warranty you can protect yourself against excessive call-out, parts and labour charges.<h2 class='popup-title text-center'><b>£" + price + "</b></h2>"
+   });
+  };
 
   $ionicModal.fromTemplateUrl('templates/checkout.html', {
     scope: $scope
@@ -180,39 +283,93 @@ angular.module('starter.controllers', ['rzModule'])
     $scope.checkoutModal = modal;
   });
 
+  $scope.step = 1;
+
+  $scope.delivery = {};
+
+  $scope.delivery.sameAsBilling = true;
+  
+  var regEx = /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/;
+
+  $scope.checkPostcode = function() {
+
+    if (regEx.test($rootScope.checkout.checkout.customer.billing.postcode)) {
+
+      $scope.spinner = true;
+
+      $http.get('https://api.getaddress.io/v2/uk/' + $rootScope.checkout.checkout.customer.billing.postcode + "?api-key=vk0rTuIyEkuaG2D4PJ6W_w5849").success(function(data) {
+         
+         $scope.addresses = data.Addresses;
+         $scope.checkout.checkout.customer.billing.address = data.Addresses[0];
+
+         $scope.spinner = false;
+         console.log(data)
+      });
+
+    }
+    
+  }
+
+  $scope.twoManDel = function() {
+    if ($scope.customer.twoManDel) {
+      var obj = {};
+      obj.type = "service";
+      obj.qty = 1;
+      obj.total = 29.99;
+      obj.item = {};
+      obj.item.sku = "TWOMANDEL";
+      obj.item.price = 29.99;
+      $rootScope.line.push(obj);
+    } else {
+      for (var i = $rootScope.line.length - 1; i >= 0; i--) {
+        if ($rootScope.line[i].item.sku == "TWOMANDEL") {
+          $rootScope.line.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  $scope.customer.address = 1;
+
   // Triggered in the login modal to close it
   $scope.closeCheckoutModal = function() {
     $scope.checkoutModal.hide();
   };
 
-  $scope.checkout = function(){
+  $scope.checkOut = function(){
     shoppingCart.checkoutCart();
+    console.log($rootScope.checkout);
     $scope.checkoutModal.show();
   };
 
-  $scope.changeQuantity = function(direction, index) {
+  $scope.changeQuantity = function(direction, sku) {
     if (direction == "up") {
-      $rootScope.inCart[index].quantity++
+      for (var i = $rootScope.line.length - 1; i >= 0; i--) {
+          if ($rootScope.line[i].item.sku == sku) {
+            $rootScope.line[i].qty ++;
+            return true;
+          }
+      }
     }
-    if (direction == "down" && $rootScope.inCart[index].quantity > 1) {
-      $rootScope.inCart[index].quantity--
+    if (direction == "down") {
+      for (var i = $rootScope.line.length - 1; i >= 0; i--) {
+          if ($rootScope.line[i].item.sku == sku && $rootScope.line[i].qty > 1) {
+            $rootScope.line[i].qty --;
+            return true;
+          }
+      }
     }
   }
 
-  // $scope.cartQuantity = function() {
-  //   var quantity = 0;
-  //   for (var i = 0; i < $rootScope.inCart.length ; i++) {
-  //       quantity += $rootScope.inCart[i].quantity;
-  //       console.log($rootScope.inCart)
-  //   }
-  //   return quantity;
-  // }
-
   $scope.cartTotal = function() {
     var total = 0;
-    for (var i = 0; i < $rootScope.inCart.length ; i++) {
-        total += $rootScope.inCart[i].price * $rootScope.inCart[i].quantity
+    for (var i = $rootScope.line.length - 1; i >= 0; i--) {
+        total += $rootScope.line[i].item.price * $rootScope.line[i].qty;
+        if ($rootScope.line[i].type == 'item' && $rootScope.line[i].addons.warranty && $rootScope.line[i].addons.warranty[0].on) {
+          total += $rootScope.line[i].addons.warranty[0].price
+        }
     }
+    if (true) {}
     return total;
   }
 
@@ -282,12 +439,8 @@ angular.module('starter.controllers', ['rzModule'])
     $scope.loadMore = function() {
 
       var url = 'http://markselectrical.co.uk/' + category + '-' + 'page-' + pageNumber + '-sort-' + $scope.list.order + '-' + 'show-12A' + '?api';
-  
-      console.log(url);
-      console.log($scope.order);
 
       if ($scope.products.length < $scope.numberOfItems) {
-
           
           // Load the data from Marks Electrical api. 
           $http.get(url).success(function (data) {
@@ -354,38 +507,22 @@ angular.module('starter.controllers', ['rzModule'])
 })
 
 .controller('ProductCtrl', function($scope, $stateParams, $http, shoppingCart, $ionicSideMenuDelegate, $ionicSlideBoxDelegate, $rootScope) {
-
-  var toString = atob($stateParams.product);
-  $scope.product = JSON.parse(toString);
-  console.log($scope.product);
-  $ionicSlideBoxDelegate.update();
-
-  $scope.addToCart = function(product) {
-    var addFields = product;
-    addFields.quantity = 1;
-    addFields.index = $rootScope.inCart.length;
-    shoppingCart.addToCart(addFields);
-    $ionicSideMenuDelegate.toggleRight();
-    $scope.$digest;
-  }
-
-
-
-  $scope.checkCart = function(productId) {
-    for (var i = 0; i < $rootScope.inCart.length ; i++) {
-        if ($rootScope.inCart[i].id == productId) {
+  
+  $scope.checkCart = function(sku) {
+    for (var i = 0; i < $rootScope.line.length ; i++) {
+        if ($rootScope.line[i].item.sku == sku) {
           return true;
         }
     }
-  }
+  };
 
   $scope.tab = 1;
 
-  $scope.title = function() {
-    return $stateParams.productName;
-  }
+  function getProductData(){
 
-  $http.get('http://markselectrical.co.uk/' + $scope.product.url + '?api').success(function(data) {
+    $http.get('http://markselectrical.co.uk/' + $scope.currentProduct.url + '?api').success(function(data) {
+
+      $scope.product = data[0];
       $scope.productData = data[0].images.slice(1,6);
       $scope.summary = data[0].summary;
       $scope.description = data[0].description;
@@ -393,10 +530,23 @@ angular.module('starter.controllers', ['rzModule'])
       $scope.productId = data[0].url.split('_')[0];
 
       $http.get('http://api.bazaarvoice.com/data/reviews.json?apiversion=5.4&passkey=caGNjXYwRCUrhX5c9VuHRgl7vgc4GPmGZYWqgxvKUxtPA&Filter=ProductId:' + $scope.productId + '&Sort=SubmissionTime:desc&Include=Products&Stats=Reviews&Limit=10').success(function(data) {
-          $scope.reviewData = data.Results;
-          $scope.rating = data.Includes.Products[$scope.productId].ReviewStatistics.AverageOverallRating
+        
+        $scope.reviewData = data.Results;
+
+        if (!$scope.currentProduct.numberOfReviews) {
+          console.log("added # of reviews + rating");
+          $scope.currentProduct.numberOfReviews = data.TotalResults;
+          $scope.currentProduct.rating = data.Includes.Products[$scope.productId].ReviewStatistics.AverageOverallRating;
+        }
+
       });
 
+    });
+
+  };
+
+  $scope.$watch('currentProduct', function() {
+      getProductData()
   });
 
 });

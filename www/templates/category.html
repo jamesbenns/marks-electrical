@@ -2,22 +2,6 @@
 
   <ion-content style="background: #0097ff">
 
-<!--   <div class="shadow">
-
-    <div class="item small-padding">
-     
-     <rzslider ng-if="init" rz-slider-model="minRangeSlider.minValue" rz-slider-high="minRangeSlider.maxValue" rz-slider-options="minRangeSlider.options"></rzslider>
-
-    </div>
-
-    <label class="item sort item-input item-select">
-      <select ng-model="$parent.order" class="sort" ng-change="orderChange()">
-        <option value="popular-order-asc">Popularity</option>
-        <option value="price-order-asc">Price low to high</option>
-        <option value="price-order-desc">Price high to low</option>
-      </select>
-    </label>
-  </div> -->
 <div class="row responsive-sm padding">
 <div class="col-50 col-offset-25">
 
@@ -27,7 +11,7 @@
   <div class="item item-divider text-center">
     {{location().categoryName}} <i class="icon ion-ios-arrow-right"></i> {{location().subCategoryName}} ({{numberOfItems}})
   </div>
-  <div class="item">     
+  <div class="item" style="min-height: 88px;">     
     <rzslider ng-if="init" rz-slider-model="minRangeSlider.minValue" rz-slider-high="minRangeSlider.maxValue" rz-slider-options="minRangeSlider.options"></rzslider>
   </div>
   <ion-radio ng-model="list.order" ng-value="'popular-order-asc'" ng-change="orderChange()">Popularity</ion-radio>
@@ -42,8 +26,10 @@
   <div class="list card product-card" ng-repeat="product in products" ng-if="product.price >= minRangeSlider.minValue && product.price <= minRangeSlider.maxValue">
 
 	  <div class="item category-product-img item-image">
-      <ion-spinner icon="crescent" class="text-center" style="position: absolute; top: 70px; width: 100%; z-index: -1; left: 0px;"></ion-spinner>
-	     <img ng-src="{{product.images[0]}}"/>
+      <div style="z-index: -1; padding-top: 100%; position: relative;">
+        <ion-spinner icon="crescent" class="text-center spinner-placeholder"></ion-spinner>
+      </div>
+	     <img ng-src="http://s3-eu-west-1.amazonaws.com/media.markselectrical.co.uk/item-images/zoom/{{product.url.split('_')[0]}}.jpg"/>
 	  </div>
 
 	  <div style="padding: 16px;" ng-click="setProduct(product)">

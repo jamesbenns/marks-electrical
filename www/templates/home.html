@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="row responsive-sm" style="padding: 0px;">
-          <div class="col-50 col-offset-25" style="margin: 0px;">
+          <div class="col-50 col-offset-25" style="margin-bottom: 0px;">
             <ion-slide-box ng-if="promotions" on-slide-changed="slideHasChanged($index)">
               <ion-slide class="padding" ng-repeat="promotion in promotions">
                 <a ng-click="promoClick(promotion.type, promotion.url)"><img class="promo-img" ng-src="{{promotion.image}}"></a>

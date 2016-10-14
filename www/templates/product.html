@@ -1,24 +1,29 @@
 <ion-view>
   <ion-content class="product-page-margin" style="background: #fff">
 
-	<ion-slide-box on-slide-changed="slideHasChanged($index)" class="product-slide-box">
-    <ion-slide class="product-slide">
-      <img ng-src="{{product.images[0]}}" class="product-img" ng-class="{shrink: tab !== 1}">
+	<ion-slide-box on-slide-changed="slideHasChanged($index)" class="product-slide-box" ng-class="{shrink: tab !== 1}">
+    <ion-slide>
+      <div class="spinner-container">
+        <ion-spinner icon="crescent" class="text-center spinner-placeholder"></ion-spinner>
+      </div>
+      <img ng-src="http://s3-eu-west-1.amazonaws.com/media.markselectrical.co.uk/item-images/zoom/{{currentProduct.url.split('_')[0]}}.jpg" class="product-img">
     </ion-slide>  
-    <ion-slide ng-repeat="image in productData" class="product-slide">
-      <img ng-src="{{image}}" class="product-img" ng-class="{shrink: tab !== 1}">
+    <ion-slide ng-repeat="image in productData">
+      <div class="spinner-container">
+        <ion-spinner icon="crescent" class="text-center spinner-placeholder"></ion-spinner>
+      </div>
+      <img ng-src="{{image}}" class="product-img">
     </ion-slide>
 	</ion-slide-box>
-
 <div ng-show="tab == 1">
 
 	  <div class="padding-16" style="border-top: 1px solid #ddd;">
-      <h4 class="text-overflow">{{product.name}}</h4>
-      <h4>£{{product.price}} <span ng-show="product.stock" class="balanced"> <i class="icon ion-checkmark"></i>In stock</span><span ng-hide="product.stock" class="assertive"> <i class="icon ion-close"></i>Out of stock</span></h4>
-      <div ng-if="product.rating"><stars rating="product.rating"></stars> ({{product.numberOfReviews}})</div>
+      <h4 class="text-overflow">{{currentProduct.name}}</h4>
+      <h4>£{{currentProduct.price}} <span ng-show="currentProduct.stock" class="balanced"> <i class="icon ion-checkmark"></i>In stock</span><span ng-hide="currentProduct.stock" class="assertive"> <i class="icon ion-close"></i>Out of stock</span></h4>
+      <div ng-if="currentProduct.rating"><stars rating="currentProduct.rating"></stars> ({{currentProduct.numberOfReviews}})</div>
 
-      <button class="button button-block button-me add-to-cart" ng-click="addToCart(product)" ng-disabled="checkCart(product.id)">
-        <span ng-show="checkCart(product.id)"><i class="icon ion-checkmark"></i> Added to your Cart</span><span ng-hide="checkCart(product.id)">Add to Cart</span>
+      <button class="button button-block button-me add-to-cart" ng-click="addToCart(product)" ng-disabled="checkCart(currentProduct.url.split('_')[0])">
+        <span ng-show="checkCart(currentProduct.url.split('_')[0])"><i class="icon ion-checkmark"></i> Added to your Cart</span><span ng-hide="checkCart(currentProduct.url.split('_')[0])">Add to Cart</span>
       </button>
     </div>
 
